@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IOCL SANGRUR TERMINAL - JRMT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 1rem;
+      margin: 0;
+      background: #f9f9f9;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 1rem;
+      background-color: #6699ff; /* light blue background */
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .title h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: #e65100;
+    }
+
+    .title h2 {
+      font-size: 1.2rem;
+      margin: 0.3rem 0 0.8rem;
+      color: #333;
+    }
+
+    .logo {
+      width: 60px;
+      height: auto;
+      margin-top: 0.5rem;
+    }
+
+    #searchBox {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.75rem;
+      font-size: 1rem;
+      margin: 0 auto 1.5rem auto; /* centers horizontally and adds bottom margin */
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block; /* needed to make margin auto work */
+    }
+
+    .route-item {
+      margin: 0.5rem 0;
+      background: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .route-item a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    @media (max-width: 480px) {
+      .title h1 {
+        font-size: 1.5rem;
+      }
+      .title h2 {
+        font-size: 1rem;
+      }
+      .route-item a {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">
+      <h1>IOCL SANGRUR TERMINAL</h1>
+      <h2>Journey Risk Management Tool</h2>
+    </div>
+    <img src="iocl_logo.png" alt="IOCL Logo" class="logo">
+  </div>
+
+  <input type="text" id="searchBox" placeholder="Search RO name or code...">
+
+  <div id="routeList">
+    <div class="route-item" data-search="12_wing_af_chandigarh 500757">
+      <a href="routes/map_12_WING_AF_CHANDIGARH_500757.html" target="_blank">12 WING AF CHANDIGARH (500757)</a>
+    </div>
+    <div class="route-item" data-search="aggarwal_filling_station 197724">
+      <a href="routes/map_AGGARWAL_FILLING_STATION_197724.html" target="_blank">AGGARWAL FILLING STATION (197724)</a>
+    </div>
+    <div class="route-item" data-search="allied_service_station 108764">
+      <a href="routes/map_ALLIED_SERVICE_STATION_108764.html" target="_blank">ALLIED SERVICE STATION (108764)</a>
+    </div>
+    <div class="route-item" data-search="ashish_service_station 197794">
+      <a href="routes/map_ASHISH_SERVICE_STATION_197794.html" target="_blank">ASHISH SERVICE STATION (197794)</a>
+    </div>
+    <div class="route-item" data-search="b_s_filling_station 226049">
+      <a href="routes/map_B_S_Filling_Station_226049.html" target="_blank">B S Filling Station (226049)</a>
+    </div>
+    <div class="route-item" data-search="citco_lpg_&_petrol_station-38 247760">
+      <a href="routes/map_CITCO_LPG_&_PETROL_STATION-38_247760.html" target="_blank">CITCO LPG & PETROL STATION-38 (247760)</a>
+    </div>
+    <div class="route-item" data-search="citco_petrol_station_-56 231441">
+      <a href="routes/map_CITCO_PETROL_STATION_-56_231441.html" target="_blank">CITCO PETROL STATION -56 (231441)</a>
+    </div>
+    <div class="route-item" data-search="city_petroleums 187496">
+      <a href="routes/map_CITY_PETROLEUMS_187496.html" target="_blank">CITY PETROLEUMS (187496)</a>
+    </div>
+    <div class="route-item" data-search="commandant_itbp_-_chd. 501783">
+      <a href="routes/map_COMMANDANT_ITBP_-_CHD._501783.html" target="_blank">COMMANDANT ITBP - CHD. (501783)</a>
+    </div>
+    <div class="route-item" data-search="csj_infrastructure_pvt.ltd. 268244">
+      <a href="routes/map_CSJ_INFRASTRUCTURE_PVT.LTD._268244.html" target="_blank">CSJ INFRASTRUCTURE PVT.LTD. (268244)</a>
+    </div>
+    <div class="route-item" data-search="dlf_infocity_developers_chd_ltd 211769">
+      <a href="routes/map_DLF_INFOCITY_DEVELOPERS_CHD_LTD_211769.html" target="_blank">DLF INFOCITY DEVELOPERS CHD LTD (211769)</a>
+    </div>
+    <div class="route-item" data-search="ganga_filling_station 187376">
+      <a href="routes/map_GANGA_FILLING_STATION_187376.html" target="_blank">GANGA FILLING STATION (187376)</a>
+    </div>
+    <div class="route-item" data-search="ghuman_badshah_filling_station 270604">
+      <a href="routes/map_GHUMAN_BADSHAH_FILLING_STATION_270604.html" target="_blank">GHUMAN BADSHAH FILLING STATION (270604)</a>
+    </div>
+    <div class="route-item" data-search="gk_petroleum 335652">
+      <a href="routes/map_GK_PETROLEUM_335652.html" target="_blank">GK PETROLEUM (335652)</a>
+    </div>
+    <div class="route-item" data-search="gm,_ctu_no.3,_chandigarh 500760">
+      <a href="routes/map_GM,_CTU_NO.3,_CHANDIGARH_500760.html" target="_blank">GM, CTU NO.3, CHANDIGARH (500760)</a>
+    </div>
+    <div class="route-item" data-search="groz_beckert_asia 102593">
+      <a href="routes/map_GROZ_BECKERT_ASIA_102593.html" target="_blank">GROZ BECKERT ASIA (102593)</a>
+    </div>
+    <div class="route-item" data-search="gurudev_filling_station, 191194">
+      <a href="routes/map_GURUDEV_FILLING_STATION,_191194.html" target="_blank">GURUDEV FILLING STATION, (191194)</a>
+    </div>
+    <div class="route-item" data-search="highway_fuel_plaza 373769">
+      <a href="routes/map_HIGHWAY_FUEL_PLAZA_373769.html" target="_blank">HIGHWAY FUEL PLAZA (373769)</a>
+    </div>
+    <div class="route-item" data-search="inspector_general_of_police 105154">
+      <a href="routes/map_INSPECTOR_GENERAL_OF_POLICE_105154.html" target="_blank">INSPECTOR GENERAL OF POLICE (105154)</a>
+    </div>
+    <div class="route-item" data-search="kay_tee_service_stn. 102987">
+      <a href="routes/map_KAY_TEE_SERVICE_STN._102987.html" target="_blank">KAY TEE SERVICE STN. (102987)</a>
+    </div>
+    <div class="route-item" data-search="kissan_filling___station 187264">
+      <a href="routes/map_KISSAN_FILLING___STATION_187264.html" target="_blank">KISSAN FILLING   STATION (187264)</a>
+    </div>
+    <div class="route-item" data-search="oc,_603_asc_bn_air_maint,chandiga 500753">
+      <a href="routes/map_OC,_603_ASC_BN_AIR_MAINT,CHANDIGA_500753.html" target="_blank">OC, 603 ASC BN AIR MAINT,CHANDIGA (500753)</a>
+    </div>
+    <div class="route-item" data-search="oc_507,_ss&tc,_chandigarh 500804">
+      <a href="routes/map_OC_507,_SS&TC,_CHANDIGARH_500804.html" target="_blank">OC 507, SS&TC, CHANDIGARH (500804)</a>
+    </div>
+    <div class="route-item" data-search="oc_507_ss_&_tc_gref 537885">
+      <a href="routes/map_OC_507_SS_&_TC_GREF_537885.html" target="_blank">OC 507 SS & TC GREF (537885)</a>
+    </div>
+    <div class="route-item" data-search="om_filling_station 174963">
+      <a href="routes/map_OM_FILLING_STATION_174963.html" target="_blank">OM FILLING STATION (174963)</a>
+    </div>
+    <div class="route-item" data-search="pathania_s_station 109700">
+      <a href="routes/map_PATHANIA_S_STATION_109700.html" target="_blank">PATHANIA S STATION (109700)</a>
+    </div>
+    <div class="route-item" data-search="pharwali_filling_station 171142">
+      <a href="routes/map_PHARWALI_FILLING_STATION_171142.html" target="_blank">PHARWALI FILLING STATION (171142)</a>
+    </div>
+    <div class="route-item" data-search="sant_filling_station 187298">
+      <a href="routes/map_SANT_FILLING_STATION_187298.html" target="_blank">SANT FILLING STATION (187298)</a>
+    </div>
+    <div class="route-item" data-search="sham_filling_station 187283">
+      <a href="routes/map_SHAM_FILLING_STATION_187283.html" target="_blank">SHAM FILLING STATION (187283)</a>
+    </div>
+    <div class="route-item" data-search="tiwana_service_station 187368">
+      <a href="routes/map_TIWANA_SERVICE_STATION_187368.html" target="_blank">TIWANA SERVICE STATION (187368)</a>
+    </div>
+    <div class="route-item" data-search="verma_oil_co. 187353">
+      <a href="routes/map_VERMA_OIL_CO._187353.html" target="_blank">VERMA OIL CO. (187353)</a>
+    </div>
+
+  </div>
+
+  <script>
+    const searchBox = document.getElementById('searchBox');
+    const items = document.querySelectorAll('.route-item');
+
+    searchBox.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      items.forEach(item => {
+        const match = item.getAttribute('data-search');
+        item.style.display = match.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
