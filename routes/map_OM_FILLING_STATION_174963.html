@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9d87fb0abe19645d05b96cce72f2eab5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9d87fb0abe19645d05b96cce72f2eab5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9d87fb0abe19645d05b96cce72f2eab5 = L.map(
+                "map_9d87fb0abe19645d05b96cce72f2eab5",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 1,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8aa28f8c50a6cbae7443fe26ab52c00e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8aa28f8c50a6cbae7443fe26ab52c00e.addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            map_9d87fb0abe19645d05b96cce72f2eab5.fitBounds(
+                [[30.21428, 75.86136], [30.21401, 75.86157], [30.2134, 75.86204], [30.20573, 75.86796], [30.20481, 75.86867], [30.2046, 75.86883], [30.20066, 75.87187], [30.19893, 75.87323], [30.19754, 75.87423], [30.19615, 75.87511], [30.19354, 75.87664], [30.19194, 75.87755], [30.1915, 75.87778], [30.19068, 75.87817], [30.18976, 75.87852], [30.18805, 75.87906], [30.18591, 75.87961], [30.1853, 75.87978], [30.18077, 75.88092], [30.17759, 75.88161], [30.17667, 75.8818], [30.17219, 75.88248], [30.17097, 75.88273], [30.16724, 75.88377], [30.1667, 75.88395], [30.16642, 75.88411], [30.16609, 75.8844], [30.16577, 75.88478], [30.16556, 75.88515], [30.16527, 75.88583], [30.16498, 75.88665], [30.16476, 75.88722], [30.16452, 75.88781], [30.1643, 75.88819], [30.1641, 75.88844], [30.16391, 75.88865], [30.16363, 75.88887], [30.1632, 75.88919], [30.16309, 75.88937], [30.16111, 75.89092], [30.15927, 75.89231], [30.15917, 75.89202], [30.15899, 75.89159], [30.15804, 75.88898], [30.15753, 75.88741], [30.15658, 75.88385], [30.15634, 75.88279], [30.15594, 75.88109], [30.15553, 75.87932], [30.15535, 75.8786], [30.15504, 75.87724], [30.15425, 75.87281], [30.15378, 75.87026], [30.15357, 75.869], [30.15351, 75.86866], [30.15339, 75.8681], [30.15311, 75.86723], [30.15284, 75.86648], [30.15236, 75.86508], [30.15204, 75.86405], [30.15001, 75.85826], [30.14883, 75.85454], [30.14803, 75.85196], [30.14734, 75.84979], [30.14555, 75.84393], [30.14495, 75.84198], [30.14455, 75.84062], [30.14434, 75.83993], [30.14413, 75.83925], [30.14391, 75.83854], [30.1438, 75.83808], [30.14345, 75.8369], [30.14283, 75.83465], [30.14239, 75.83314], [30.14193, 75.83149], [30.14168, 75.83076], [30.14165, 75.83065], [30.14161, 75.83054], [30.14106, 75.82868], [30.14045, 75.82653], [30.13836, 75.81944], [30.13766, 75.81722], [30.13759, 75.81699], [30.13727, 75.81592], [30.13675, 75.81432], [30.13674, 75.81432], [30.13358, 75.81492], [30.13143, 75.8153], [30.12992, 75.81555], [30.12633, 75.81618], [30.12518, 75.8164], [30.12227, 75.81697], [30.12166, 75.81709], [30.1186, 75.81776], [30.11788, 75.81791], [30.11768, 75.81793], [30.11741, 75.81797], [30.11228, 75.81905], [30.10925, 75.81973], [30.10745, 75.8201], [30.10606, 75.82043], [30.10299, 75.8211], [30.09981, 75.8218], [30.08831, 75.8244], [30.08303, 75.82559], [30.07844, 75.82662], [30.07768, 75.82677], [30.07691, 75.82675], [30.07571, 75.82657], [30.07371, 75.82633], [30.07074, 75.82599], [30.06569, 75.82536], [30.06106, 75.82475], [30.05587, 75.82417], [30.04724, 75.82325], [30.04491, 75.82299], [30.04292, 75.8228], [30.04194, 75.82271], [30.04132, 75.82254], [30.04068, 75.82226], [30.04034, 75.82192], [30.03992, 75.82142], [30.03966, 75.82109], [30.03947, 75.82064], [30.03935, 75.82023], [30.03931, 75.81994], [30.03927, 75.81947], [30.03927, 75.81903], [30.03953, 75.81235], [30.03967, 75.8074], [30.0399, 75.80046], [30.04004, 75.79561], [30.04009, 75.79405], [30.04002, 75.79339], [30.0399, 75.7929], [30.03958, 75.79223], [30.03922, 75.79168], [30.03867, 75.79114], [30.03826, 75.79084], [30.03791, 75.79073], [30.03742, 75.79064], [30.03665, 75.79065], [30.03117, 75.79079], [30.02858, 75.79089], [30.01104, 75.79144], [30.01083, 75.79145], [30.00529, 75.79163], [30.00316, 75.7917], [30.00021, 75.79179], [29.99692, 75.79188], [29.99354, 75.79203], [29.99105, 75.79211], [29.97457, 75.79269], [29.9745, 75.79269], [29.9635, 75.79307], [29.96112, 75.79318], [29.95955, 75.7932], [29.95873, 75.79322], [29.95638, 75.79333], [29.95173, 75.79348], [29.94954, 75.79358], [29.94498, 75.79375], [29.94322, 75.79375], [29.94282, 75.79376], [29.94243, 75.79384], [29.94182, 75.79403], [29.94141, 75.79427], [29.94075, 75.79471], [29.94023, 75.79515], [29.93985, 75.7957], [29.93929, 75.79665], [29.93906, 75.79703], [29.93789, 75.79884], [29.93774, 75.79909], [29.93762, 75.79933], [29.93722, 75.79987], [29.93666, 75.8005], [29.93612, 75.80084], [29.93575, 75.80096], [29.93542, 75.80097], [29.93501, 75.80088], [29.93387, 75.80026], [29.93342, 75.79996], [29.93316, 75.79979], [29.93282, 75.80094], [29.93153, 75.80585], [29.93149, 75.80601], [29.93087, 75.80842], [29.93059, 75.80979], [29.93047, 75.8105], [29.93034, 75.81154], [29.93007, 75.81404], [29.93005, 75.81423], [29.9298, 75.81648], [29.92933, 75.82118], [29.92907, 75.82397], [29.92904, 75.82448], [29.92902, 75.82643], [29.92902, 75.82913], [29.92899, 75.83377], [29.92899, 75.83538]],
+                {}
+            );
+        
+    
+            var poly_line_4123563097e8e7e41e26b1bd42f7c729 = L.polyline(
+                [[30.21428, 75.86136], [30.21401, 75.86157], [30.2134, 75.86204], [30.20573, 75.86796], [30.20481, 75.86867], [30.2046, 75.86883], [30.20066, 75.87187], [30.19893, 75.87323], [30.19754, 75.87423], [30.19615, 75.87511], [30.19354, 75.87664], [30.19194, 75.87755], [30.1915, 75.87778], [30.19068, 75.87817], [30.18976, 75.87852], [30.18805, 75.87906], [30.18591, 75.87961], [30.1853, 75.87978], [30.18077, 75.88092], [30.17759, 75.88161], [30.17667, 75.8818], [30.17219, 75.88248], [30.17097, 75.88273], [30.16724, 75.88377], [30.1667, 75.88395], [30.16642, 75.88411], [30.16609, 75.8844], [30.16577, 75.88478], [30.16556, 75.88515], [30.16527, 75.88583], [30.16498, 75.88665], [30.16476, 75.88722], [30.16452, 75.88781], [30.1643, 75.88819], [30.1641, 75.88844], [30.16391, 75.88865], [30.16363, 75.88887], [30.1632, 75.88919], [30.16309, 75.88937], [30.16111, 75.89092], [30.15927, 75.89231], [30.15917, 75.89202], [30.15899, 75.89159], [30.15804, 75.88898], [30.15753, 75.88741], [30.15658, 75.88385], [30.15634, 75.88279], [30.15594, 75.88109], [30.15553, 75.87932], [30.15535, 75.8786], [30.15504, 75.87724], [30.15425, 75.87281], [30.15378, 75.87026], [30.15357, 75.869], [30.15351, 75.86866], [30.15339, 75.8681], [30.15311, 75.86723], [30.15284, 75.86648], [30.15236, 75.86508], [30.15204, 75.86405], [30.15001, 75.85826], [30.14883, 75.85454], [30.14803, 75.85196], [30.14734, 75.84979], [30.14555, 75.84393], [30.14495, 75.84198], [30.14455, 75.84062], [30.14434, 75.83993], [30.14413, 75.83925], [30.14391, 75.83854], [30.1438, 75.83808], [30.14345, 75.8369], [30.14283, 75.83465], [30.14239, 75.83314], [30.14193, 75.83149], [30.14168, 75.83076], [30.14165, 75.83065], [30.14161, 75.83054], [30.14106, 75.82868], [30.14045, 75.82653], [30.13836, 75.81944], [30.13766, 75.81722], [30.13759, 75.81699], [30.13727, 75.81592], [30.13675, 75.81432], [30.13674, 75.81432], [30.13358, 75.81492], [30.13143, 75.8153], [30.12992, 75.81555], [30.12633, 75.81618], [30.12518, 75.8164], [30.12227, 75.81697], [30.12166, 75.81709], [30.1186, 75.81776], [30.11788, 75.81791], [30.11768, 75.81793], [30.11741, 75.81797], [30.11228, 75.81905], [30.10925, 75.81973], [30.10745, 75.8201], [30.10606, 75.82043], [30.10299, 75.8211], [30.09981, 75.8218], [30.08831, 75.8244], [30.08303, 75.82559], [30.07844, 75.82662], [30.07768, 75.82677], [30.07691, 75.82675], [30.07571, 75.82657], [30.07371, 75.82633], [30.07074, 75.82599], [30.06569, 75.82536], [30.06106, 75.82475], [30.05587, 75.82417], [30.04724, 75.82325], [30.04491, 75.82299], [30.04292, 75.8228], [30.04194, 75.82271], [30.04132, 75.82254], [30.04068, 75.82226], [30.04034, 75.82192], [30.03992, 75.82142], [30.03966, 75.82109], [30.03947, 75.82064], [30.03935, 75.82023], [30.03931, 75.81994], [30.03927, 75.81947], [30.03927, 75.81903], [30.03953, 75.81235], [30.03967, 75.8074], [30.0399, 75.80046], [30.04004, 75.79561], [30.04009, 75.79405], [30.04002, 75.79339], [30.0399, 75.7929], [30.03958, 75.79223], [30.03922, 75.79168], [30.03867, 75.79114], [30.03826, 75.79084], [30.03791, 75.79073], [30.03742, 75.79064], [30.03665, 75.79065], [30.03117, 75.79079], [30.02858, 75.79089], [30.01104, 75.79144], [30.01083, 75.79145], [30.00529, 75.79163], [30.00316, 75.7917], [30.00021, 75.79179], [29.99692, 75.79188], [29.99354, 75.79203], [29.99105, 75.79211], [29.97457, 75.79269], [29.9745, 75.79269], [29.9635, 75.79307], [29.96112, 75.79318], [29.95955, 75.7932], [29.95873, 75.79322], [29.95638, 75.79333], [29.95173, 75.79348], [29.94954, 75.79358], [29.94498, 75.79375], [29.94322, 75.79375], [29.94282, 75.79376], [29.94243, 75.79384], [29.94182, 75.79403], [29.94141, 75.79427], [29.94075, 75.79471], [29.94023, 75.79515], [29.93985, 75.7957], [29.93929, 75.79665], [29.93906, 75.79703], [29.93789, 75.79884], [29.93774, 75.79909], [29.93762, 75.79933], [29.93722, 75.79987], [29.93666, 75.8005], [29.93612, 75.80084], [29.93575, 75.80096], [29.93542, 75.80097], [29.93501, 75.80088], [29.93387, 75.80026], [29.93342, 75.79996], [29.93316, 75.79979], [29.93282, 75.80094], [29.93153, 75.80585], [29.93149, 75.80601], [29.93087, 75.80842], [29.93059, 75.80979], [29.93047, 75.8105], [29.93034, 75.81154], [29.93007, 75.81404], [29.93005, 75.81423], [29.9298, 75.81648], [29.92933, 75.82118], [29.92907, 75.82397], [29.92904, 75.82448], [29.92902, 75.82643], [29.92902, 75.82913], [29.92899, 75.83377], [29.92899, 75.83538]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var circle_marker_a63a8e96519e2eb00017a7ec3361a6ca = L.circleMarker(
+                [30.15927, 75.89231],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+        var popup_fd683b3c97bf78741b12fcb08bda6f83 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e766f3ec3848bd9e1aa9d6458f6ab8f8 = $(`<div id="html_e766f3ec3848bd9e1aa9d6458f6ab8f8" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 101.4, Risk: High</div>`)[0];
+                popup_fd683b3c97bf78741b12fcb08bda6f83.setContent(html_e766f3ec3848bd9e1aa9d6458f6ab8f8);
+            
+        
+
+        circle_marker_a63a8e96519e2eb00017a7ec3361a6ca.bindPopup(popup_fd683b3c97bf78741b12fcb08bda6f83)
+        ;
+
+        
+    
+    
+            var circle_marker_29b6d793c92aa5ea2eec6b1e29b1ded7 = L.circleMarker(
+                [30.13675, 75.81432],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+        var popup_7c589aa570e50deb37d38440d7da355f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0bf382e7e489586e1f1dbc593c064f5c = $(`<div id="html_0bf382e7e489586e1f1dbc593c064f5c" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 69.4, Risk: Medium</div>`)[0];
+                popup_7c589aa570e50deb37d38440d7da355f.setContent(html_0bf382e7e489586e1f1dbc593c064f5c);
+            
+        
+
+        circle_marker_29b6d793c92aa5ea2eec6b1e29b1ded7.bindPopup(popup_7c589aa570e50deb37d38440d7da355f)
+        ;
+
+        
+    
+    
+            var circle_marker_45f87a7abc18ac300cf6999e302fbce1 = L.circleMarker(
+                [29.93316, 75.79979],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+        var popup_b1af2be04d7546831c50fdff75509cf2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ccc6b2be6c44eb6dd9ef40128e4a2bd = $(`<div id="html_5ccc6b2be6c44eb6dd9ef40128e4a2bd" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 100.7, Risk: High</div>`)[0];
+                popup_b1af2be04d7546831c50fdff75509cf2.setContent(html_5ccc6b2be6c44eb6dd9ef40128e4a2bd);
+            
+        
+
+        circle_marker_45f87a7abc18ac300cf6999e302fbce1.bindPopup(popup_b1af2be04d7546831c50fdff75509cf2)
+        ;
+
+        
+    
+    
+            var marker_f0930205c094307082827f4dc9bc2995 = L.marker(
+                [30.16118, 75.89084],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_db28d52008856ba134562bb1f72de785 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f622d754a33feac040ff96ecda65145 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a3a25257220ec04f88fc4d35c24e69c = $(`<div id="html_7a3a25257220ec04f88fc4d35c24e69c" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 6987.2m, Risk: High</div>`)[0];
+                popup_8f622d754a33feac040ff96ecda65145.setContent(html_7a3a25257220ec04f88fc4d35c24e69c);
+            
+        
+
+        marker_f0930205c094307082827f4dc9bc2995.bindPopup(popup_8f622d754a33feac040ff96ecda65145)
+        ;
+
+        
+    
+    
+                marker_f0930205c094307082827f4dc9bc2995.setIcon(icon_db28d52008856ba134562bb1f72de785);
+            
+    
+            var marker_179d864f312719c7a1eec35cc75ca08e = L.marker(
+                [30.137169999999998, 75.81565499999999],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_4a712154d661e5a7a8cc62b02563e48d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_47a9a1a104e2f377148bef566300015a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_87cb016c1cecc2513b4c14d539e260ee = $(`<div id="html_87cb016c1cecc2513b4c14d539e260ee" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 14916.1m, Risk: High</div>`)[0];
+                popup_47a9a1a104e2f377148bef566300015a.setContent(html_87cb016c1cecc2513b4c14d539e260ee);
+            
+        
+
+        marker_179d864f312719c7a1eec35cc75ca08e.bindPopup(popup_47a9a1a104e2f377148bef566300015a)
+        ;
+
+        
+    
+    
+                marker_179d864f312719c7a1eec35cc75ca08e.setIcon(icon_4a712154d661e5a7a8cc62b02563e48d);
+            
+    
+            var marker_c88b8f51f1db5238dc3134986e9d2ff8 = L.marker(
+                [30.137005000000002, 75.81512000000001],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_c733e955e06fbb02726cb28f4ab4bef0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_691adf76d542f2e646731c99fa5fc510 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78c4d2c8c0dcd4df1f1ba48c94c71d52 = $(`<div id="html_78c4d2c8c0dcd4df1f1ba48c94c71d52" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 14917.2m, Risk: High</div>`)[0];
+                popup_691adf76d542f2e646731c99fa5fc510.setContent(html_78c4d2c8c0dcd4df1f1ba48c94c71d52);
+            
+        
+
+        marker_c88b8f51f1db5238dc3134986e9d2ff8.bindPopup(popup_691adf76d542f2e646731c99fa5fc510)
+        ;
+
+        
+    
+    
+                marker_c88b8f51f1db5238dc3134986e9d2ff8.setIcon(icon_c733e955e06fbb02726cb28f4ab4bef0);
+            
+    
+            var marker_6d8a44fb292d7c99e83c6c16f325827b = L.marker(
+                [29.933515, 75.800025],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_05f8431acfdc98c1f486c286531c99b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_124356bb0e428ee30df9e48211e8455a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a8daf71cbde2bb4f9352517f68b0ce86 = $(`<div id="html_a8daf71cbde2bb4f9352517f68b0ce86" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 40851.3m, Risk: High</div>`)[0];
+                popup_124356bb0e428ee30df9e48211e8455a.setContent(html_a8daf71cbde2bb4f9352517f68b0ce86);
+            
+        
+
+        marker_6d8a44fb292d7c99e83c6c16f325827b.bindPopup(popup_124356bb0e428ee30df9e48211e8455a)
+        ;
+
+        
+    
+    
+                marker_6d8a44fb292d7c99e83c6c16f325827b.setIcon(icon_05f8431acfdc98c1f486c286531c99b4);
+            
+    
+            var marker_2c6a5956e51472fc54368321821ae811 = L.marker(
+                [30.15758359999999, 75.8960589],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_4f7c12d1b6457b1d15042e53910ea56f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8607d0682bd7e39d5760d2b75b5879a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe242e17c8b5edddcc36ffb97278268b = $(`<div id="html_fe242e17c8b5edddcc36ffb97278268b" style="width: 100.0%; height: 100.0%;">Hospital: Govenment Veternary Hospital - 5V5W+2CM, Mahlan</div>`)[0];
+                popup_8607d0682bd7e39d5760d2b75b5879a5.setContent(html_fe242e17c8b5edddcc36ffb97278268b);
+            
+        
+
+        marker_2c6a5956e51472fc54368321821ae811.bindPopup(popup_8607d0682bd7e39d5760d2b75b5879a5)
+        ;
+
+        
+    
+    
+                marker_2c6a5956e51472fc54368321821ae811.setIcon(icon_4f7c12d1b6457b1d15042e53910ea56f);
+            
+    
+            var marker_30f5d519e6bc2f237e24eea357512b36 = L.marker(
+                [30.1381001, 75.81748189999999],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_d9164b38201573d6c4c530f0e60d9ef2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9009d1abe24b681562a70fc8d9044bc2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_105227ae8d7b9f0a6f743a7e2c1fa0e7 = $(`<div id="html_105227ae8d7b9f0a6f743a7e2c1fa0e7" style="width: 100.0%; height: 100.0%;">Hospital: Kashmiri Hospital - near Civil Court, Sunam Udham Singh Wala</div>`)[0];
+                popup_9009d1abe24b681562a70fc8d9044bc2.setContent(html_105227ae8d7b9f0a6f743a7e2c1fa0e7);
+            
+        
+
+        marker_30f5d519e6bc2f237e24eea357512b36.bindPopup(popup_9009d1abe24b681562a70fc8d9044bc2)
+        ;
+
+        
+    
+    
+                marker_30f5d519e6bc2f237e24eea357512b36.setIcon(icon_d9164b38201573d6c4c530f0e60d9ef2);
+            
+    
+            var marker_f8dffc98a436a5dce95dc136988c368b = L.marker(
+                [30.07532940000001, 75.8292791],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_fd684af0e36e51a85fe939b8ffb50300 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_10da00ef6b784d83f4e0a782ec045a17 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee557b443d08989f2b22ef1bfd2b61fe = $(`<div id="html_ee557b443d08989f2b22ef1bfd2b61fe" style="width: 100.0%; height: 100.0%;">Hospital: Sandhu.clinic - 3RGH+4PJ, Chhajli</div>`)[0];
+                popup_10da00ef6b784d83f4e0a782ec045a17.setContent(html_ee557b443d08989f2b22ef1bfd2b61fe);
+            
+        
+
+        marker_f8dffc98a436a5dce95dc136988c368b.bindPopup(popup_10da00ef6b784d83f4e0a782ec045a17)
+        ;
+
+        
+    
+    
+                marker_f8dffc98a436a5dce95dc136988c368b.setIcon(icon_fd684af0e36e51a85fe939b8ffb50300);
+            
+    
+            var marker_6186241134b90fb3f0f1d907367d1e2e = L.marker(
+                [29.9321725, 75.8337391],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_baad286ee48877b0a43e5a64707fded7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4b9671f9c80a76a8361ec1196fc6a4c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00eb0bf4b59559a5770f0c4ea2447028 = $(`<div id="html_00eb0bf4b59559a5770f0c4ea2447028" style="width: 100.0%; height: 100.0%;">Hospital: Civil Hospital Moonak - WRJM+VF9, Moonak Road, Khai</div>`)[0];
+                popup_4b9671f9c80a76a8361ec1196fc6a4c2.setContent(html_00eb0bf4b59559a5770f0c4ea2447028);
+            
+        
+
+        marker_6186241134b90fb3f0f1d907367d1e2e.bindPopup(popup_4b9671f9c80a76a8361ec1196fc6a4c2)
+        ;
+
+        
+    
+    
+                marker_6186241134b90fb3f0f1d907367d1e2e.setIcon(icon_baad286ee48877b0a43e5a64707fded7);
+            
+    
+            var marker_e8ae9d898b59f2142ec9c425d4219b53 = L.marker(
+                [30.158691, 75.891262],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_f38b5435ec4adca1dcfe0db09939ed36 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b11e5f817a2d94ed56d2d5c6714968e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_66b69ca32cf007ea87ea14ee516bd959 = $(`<div id="html_66b69ca32cf007ea87ea14ee516bd959" style="width: 100.0%; height: 100.0%;">Gas_Station: IndianOil - Ground Floor B Garh Sunam Rd, Mehlan, Chawk, Badrukhan</div>`)[0];
+                popup_b11e5f817a2d94ed56d2d5c6714968e3.setContent(html_66b69ca32cf007ea87ea14ee516bd959);
+            
+        
+
+        marker_e8ae9d898b59f2142ec9c425d4219b53.bindPopup(popup_b11e5f817a2d94ed56d2d5c6714968e3)
+        ;
+
+        
+    
+    
+                marker_e8ae9d898b59f2142ec9c425d4219b53.setIcon(icon_f38b5435ec4adca1dcfe0db09939ed36);
+            
+    
+            var marker_84bb4e5b8cbdf37040f49fd86ebf5fb6 = L.marker(
+                [30.1369955, 75.8160898],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_707bd78c34ed5de9042fed41901ca5b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_171ef39f8c91c1a6f1fc4c8bc2ffecb8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19b5d6e156242bf5dae833c407d2cc9e = $(`<div id="html_19b5d6e156242bf5dae833c407d2cc9e" style="width: 100.0%; height: 100.0%;">Gas_Station: Bharat Petroleum, Petrol Pump -Kaka Ram Ranuq Ram - SUNAM NEAR LIGHT CHOWK, Sangrur</div>`)[0];
+                popup_171ef39f8c91c1a6f1fc4c8bc2ffecb8.setContent(html_19b5d6e156242bf5dae833c407d2cc9e);
+            
+        
+
+        marker_84bb4e5b8cbdf37040f49fd86ebf5fb6.bindPopup(popup_171ef39f8c91c1a6f1fc4c8bc2ffecb8)
+        ;
+
+        
+    
+    
+                marker_84bb4e5b8cbdf37040f49fd86ebf5fb6.setIcon(icon_707bd78c34ed5de9042fed41901ca5b2);
+            
+    
+            var marker_3843bf9b4356cd7a0608d18945700025 = L.marker(
+                [29.928868, 75.83538],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_df5b3470afbb65ebfa8622b36de7d1d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f02fa3771bac8d5c413f3cc98d9da128 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79fe3a664ae701debf32922f3389c1be = $(`<div id="html_79fe3a664ae701debf32922f3389c1be" style="width: 100.0%; height: 100.0%;">Gas_Station: IndianOil - Gurjant Singh, Ground Floor Lehal Khurd, Chowk, Chotian</div>`)[0];
+                popup_f02fa3771bac8d5c413f3cc98d9da128.setContent(html_79fe3a664ae701debf32922f3389c1be);
+            
+        
+
+        marker_3843bf9b4356cd7a0608d18945700025.bindPopup(popup_f02fa3771bac8d5c413f3cc98d9da128)
+        ;
+
+        
+    
+    
+                marker_3843bf9b4356cd7a0608d18945700025.setIcon(icon_df5b3470afbb65ebfa8622b36de7d1d8);
+            
+    
+            var marker_c9b9b216f492544847048d0a58f5a6bb = L.marker(
+                [29.9286867, 75.8320943],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_435ea935cb20540bd801639ed79af1d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c1f7bd93d2a0400b0d6104f92164a5b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f9cdb5157596b56cff5573335725f5a = $(`<div id="html_9f9cdb5157596b56cff5573335725f5a" style="width: 100.0%; height: 100.0%;">Gas_Station: Reliance Petroleum - Ground Floor, Duggal Road, Lehragaga</div>`)[0];
+                popup_c1f7bd93d2a0400b0d6104f92164a5b1.setContent(html_9f9cdb5157596b56cff5573335725f5a);
+            
+        
+
+        marker_c9b9b216f492544847048d0a58f5a6bb.bindPopup(popup_c1f7bd93d2a0400b0d6104f92164a5b1)
+        ;
+
+        
+    
+    
+                marker_c9b9b216f492544847048d0a58f5a6bb.setIcon(icon_435ea935cb20540bd801639ed79af1d3);
+            
+    
+            var marker_8f9f82b1dfe88ad72051a9a384c372fb = L.marker(
+                [30.1583277, 75.8933303],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_756a5ad55fd326aab5ef7d4bd760faa5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbdc480d103f6cf4ed0efddb6c1e3534 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_266087d9fa12dcd59ad3073a7c17cec1 = $(`<div id="html_266087d9fa12dcd59ad3073a7c17cec1" style="width: 100.0%; height: 100.0%;">Police: Police Station, Mehlan - 5V5V+88P, Mahlan</div>`)[0];
+                popup_dbdc480d103f6cf4ed0efddb6c1e3534.setContent(html_266087d9fa12dcd59ad3073a7c17cec1);
+            
+        
+
+        marker_8f9f82b1dfe88ad72051a9a384c372fb.bindPopup(popup_dbdc480d103f6cf4ed0efddb6c1e3534)
+        ;
+
+        
+    
+    
+                marker_8f9f82b1dfe88ad72051a9a384c372fb.setIcon(icon_756a5ad55fd326aab5ef7d4bd760faa5);
+            
+    
+            var marker_3cda93d3c5b7a892c81ee23e51799c1e = L.marker(
+                [29.935379, 75.8105176],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_f8f7c14f3aa5b4be73eadf7bbf004299 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04fcc708055c3aa3d66bb692901551ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ceca558e0c295f9f16ca650cda28788d = $(`<div id="html_ceca558e0c295f9f16ca650cda28788d" style="width: 100.0%; height: 100.0%;">Crane: Dashmesh crane service & jcb - WRP6+46R, Lehragaga</div>`)[0];
+                popup_04fcc708055c3aa3d66bb692901551ea.setContent(html_ceca558e0c295f9f16ca650cda28788d);
+            
+        
+
+        marker_3cda93d3c5b7a892c81ee23e51799c1e.bindPopup(popup_04fcc708055c3aa3d66bb692901551ea)
+        ;
+
+        
+    
+    
+                marker_3cda93d3c5b7a892c81ee23e51799c1e.setIcon(icon_f8f7c14f3aa5b4be73eadf7bbf004299);
+            
+    
+            var marker_a931dbf01d20886287442dbd955f9ed5 = L.marker(
+                [30.1371132, 75.81631949999999],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_6c29c94e93813a44b55c3bbf7e1cb826 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7388471c579cb66b4dc056fef5a3aac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_34fc47070f86ba83d143cf45125e8c5b = $(`<div id="html_34fc47070f86ba83d143cf45125e8c5b" style="width: 100.0%; height: 100.0%;">Puncture_Shop: Yokohama Club Network - Mittal Tyre House - ITI Chowk, Sardar Nagar, Dashmesh Nagar, Sangrur, Sunam Udham Singh Wala</div>`)[0];
+                popup_f7388471c579cb66b4dc056fef5a3aac.setContent(html_34fc47070f86ba83d143cf45125e8c5b);
+            
+        
+
+        marker_a931dbf01d20886287442dbd955f9ed5.bindPopup(popup_f7388471c579cb66b4dc056fef5a3aac)
+        ;
+
+        
+    
+    
+                marker_a931dbf01d20886287442dbd955f9ed5.setIcon(icon_6c29c94e93813a44b55c3bbf7e1cb826);
+            
+    
+            var marker_66ab967b4b637ff7dbf3ff2ec5cad599 = L.marker(
+                [30.1363947, 75.81379419999999],
+                {
+}
+            ).addTo(map_9d87fb0abe19645d05b96cce72f2eab5);
+        
+    
+            var icon_093276cc5cd488986bc86e1fe9e7796d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b400a1abf3db9c5dca765f254251533a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_664a5b534044cb139bbee4fb0bad17e6 = $(`<div id="html_664a5b534044cb139bbee4fb0bad17e6" style="width: 100.0%; height: 100.0%;">Puncture_Shop: BALAJI TYRES - 4RP7+HGF, SH12A, Ajit Nagar, Shapur Kalan, Sunam Udham Singh Wala</div>`)[0];
+                popup_b400a1abf3db9c5dca765f254251533a.setContent(html_664a5b534044cb139bbee4fb0bad17e6);
+            
+        
+
+        marker_66ab967b4b637ff7dbf3ff2ec5cad599.bindPopup(popup_b400a1abf3db9c5dca765f254251533a)
+        ;
+
+        
+    
+    
+                marker_66ab967b4b637ff7dbf3ff2ec5cad599.setIcon(icon_093276cc5cd488986bc86e1fe9e7796d);
+            
+</script>
+</html>

@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1a689bb2e6e9d957279f431265aada38 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1a689bb2e6e9d957279f431265aada38" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1a689bb2e6e9d957279f431265aada38 = L.map(
+                "map_1a689bb2e6e9d957279f431265aada38",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 1,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_444da3c827c2ab45585ae92e80b8dbee = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_444da3c827c2ab45585ae92e80b8dbee.addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            map_1a689bb2e6e9d957279f431265aada38.fitBounds(
+                [[30.21428, 75.86136], [30.21401, 75.86157], [30.2134, 75.86204], [30.20573, 75.86796], [30.20481, 75.86867], [30.2046, 75.86883], [30.20066, 75.87187], [30.19893, 75.87323], [30.19754, 75.87423], [30.19615, 75.87511], [30.19354, 75.87664], [30.19194, 75.87755], [30.1915, 75.87778], [30.19068, 75.87817], [30.18976, 75.87852], [30.18805, 75.87906], [30.18591, 75.87961], [30.1853, 75.87978], [30.18077, 75.88092], [30.17759, 75.88161], [30.17667, 75.8818], [30.17219, 75.88248], [30.17097, 75.88273], [30.16724, 75.88377], [30.1667, 75.88395], [30.16642, 75.88411], [30.16609, 75.8844], [30.16577, 75.88478], [30.16556, 75.88515], [30.16527, 75.88583], [30.16498, 75.88665], [30.16476, 75.88722], [30.16452, 75.88781], [30.1643, 75.88819], [30.1641, 75.88844], [30.16391, 75.88865], [30.16363, 75.88887], [30.1632, 75.88919], [30.15935, 75.89213], [30.15911, 75.89232], [30.15674, 75.89408], [30.15612, 75.89463], [30.15546, 75.89529], [30.15487, 75.89588], [30.15445, 75.8964], [30.15415, 75.8968], [30.15367, 75.89749], [30.15261, 75.89913], [30.15209, 75.90005], [30.15167, 75.90077], [30.15123, 75.90149], [30.15109, 75.90168], [30.15086, 75.90195], [30.15061, 75.90219], [30.14838, 75.90394], [30.14821, 75.90409], [30.14497, 75.90707], [30.14343, 75.90848], [30.14137, 75.91039], [30.13998, 75.91163], [30.13695, 75.91416], [30.13494, 75.91582], [30.13382, 75.91669], [30.13301, 75.91726], [30.13107, 75.91851], [30.12971, 75.91944], [30.12969, 75.91946], [30.1272, 75.92125], [30.12712, 75.92131], [30.12489, 75.92293], [30.11802, 75.92793], [30.11709, 75.92865], [30.11053, 75.93421], [30.109, 75.93546], [30.10779, 75.93639], [30.10742, 75.93672], [30.10599, 75.93833], [30.10587, 75.93848], [30.10556, 75.93889], [30.10336, 75.94169], [30.10163, 75.9438], [30.09958, 75.9464], [30.09839, 75.94785], [30.09612, 75.95079], [30.09206, 75.95596], [30.08909, 75.95984], [30.08832, 75.96093], [30.08756, 75.96196], [30.08746, 75.96209], [30.08744, 75.96212], [30.08364, 75.96692], [30.08306, 75.96769], [30.0812, 75.97004], [30.08083, 75.97045], [30.0803, 75.97109], [30.07585, 75.97682], [30.07497, 75.97797], [30.07379, 75.97963], [30.07295, 75.98071], [30.07279, 75.9809], [30.07162, 75.98231], [30.07035, 75.98385], [30.06815, 75.98649], [30.06736, 75.98748], [30.06459, 75.99085], [30.06446, 75.991], [30.06168, 75.99434], [30.06117, 75.99496], [30.06105, 75.9951], [30.05814, 75.99865], [30.05652, 76.00057], [30.05632, 76.00082], [30.0557, 76.00151], [30.05439, 76.00317], [30.05156, 76.00654], [30.05099, 76.00697], [30.0467, 76.00901], [30.04649, 76.0091], [30.04469, 76.00996], [30.03596, 76.01403], [30.03471, 76.01463], [30.03306, 76.01536], [30.03215, 76.0157], [30.02757, 76.01722], [30.02493, 76.01806], [30.01213, 76.02233], [30.00975, 76.02308], [30.00022, 76.02629], [29.9895, 76.02989], [29.98915, 76.0301], [29.98906, 76.03018], [29.9874, 76.03174], [29.9844, 76.03456], [29.98432, 76.03463], [29.98237, 76.03648], [29.98136, 76.03739], [29.97881, 76.03971], [29.97816, 76.04033], [29.97696, 76.04137], [29.97651, 76.04182], [29.97632, 76.04217], [29.97504, 76.04337], [29.97374, 76.04464], [29.9734, 76.04491], [29.97201, 76.04622], [29.97226, 76.04732], [29.9725, 76.04863], [29.97313, 76.05162], [29.9733, 76.05245], [29.97332, 76.05271], [29.97328, 76.05294], [29.97209, 76.05574], [29.97116, 76.05805], [29.97089, 76.05869], [29.97023, 76.06194], [29.96974, 76.06293], [29.97017, 76.06332], [29.97117, 76.06415], [29.97257, 76.06525], [29.97436, 76.06672], [29.97627, 76.06833], [29.97824, 76.06996], [29.98078, 76.07214], [29.98267, 76.07369], [29.98558, 76.07619], [29.98754, 76.07781], [29.98965, 76.07961], [29.99058, 76.08044], [29.99268, 76.08222], [29.99461, 76.08387], [29.99541, 76.08455], [29.99638, 76.08527], [29.99748, 76.08618], [29.99901, 76.08749], [30.00061, 76.08882], [30.00185, 76.08988], [30.0043, 76.09192], [30.00734, 76.0945], [30.00908, 76.09596], [30.01401, 76.10014], [30.01474, 76.10073], [30.01501, 76.10095], [30.01557, 76.10146], [30.01583, 76.10165], [30.01599, 76.10173], [30.01627, 76.10178], [30.01674, 76.10183], [30.01709, 76.10191], [30.01734, 76.102], [30.01768, 76.10221], [30.0182, 76.10268], [30.01864, 76.10317], [30.01888, 76.10347], [30.01902, 76.10372], [30.01915, 76.10417], [30.01921, 76.10441], [30.01928, 76.10463], [30.01935, 76.10476], [30.01946, 76.10491], [30.02077, 76.10621], [30.02119, 76.10661], [30.01463, 76.1129], [30.01443, 76.11315], [30.01245, 76.11694], [30.01091, 76.11994], [30.009, 76.12358], [30.00784, 76.12567], [30.00537, 76.12958], [30.00535, 76.12965], [30.00533, 76.12973], [30.00526, 76.13289], [30.00521, 76.13303], [30.0051, 76.13317], [30.00371, 76.13481], [30.00354, 76.13495], [30.00341, 76.13495], [30.00278, 76.13471], [29.99864, 76.14328], [29.99822, 76.14463], [29.99796, 76.14506], [29.99666, 76.14641], [29.99661, 76.14665], [29.99651, 76.14713], [29.99639, 76.14786], [29.99574, 76.14903], [29.99524, 76.1499], [29.99426, 76.15167], [29.99087, 76.15795], [29.98913, 76.16111], [29.98993, 76.16139], [29.99038, 76.16153], [29.99121, 76.16176], [29.99762, 76.16363], [29.99769, 76.16366], [29.99782, 76.16377], [29.9993, 76.16622], [29.99947, 76.16642], [29.99999, 76.16689], [30.00074, 76.16753], [30.00199, 76.16847], [30.00219, 76.16862]],
+                {}
+            );
+        
+    
+            var poly_line_d5374191f0009dec69d44616b95914a1 = L.polyline(
+                [[30.21428, 75.86136], [30.21401, 75.86157], [30.2134, 75.86204], [30.20573, 75.86796], [30.20481, 75.86867], [30.2046, 75.86883], [30.20066, 75.87187], [30.19893, 75.87323], [30.19754, 75.87423], [30.19615, 75.87511], [30.19354, 75.87664], [30.19194, 75.87755], [30.1915, 75.87778], [30.19068, 75.87817], [30.18976, 75.87852], [30.18805, 75.87906], [30.18591, 75.87961], [30.1853, 75.87978], [30.18077, 75.88092], [30.17759, 75.88161], [30.17667, 75.8818], [30.17219, 75.88248], [30.17097, 75.88273], [30.16724, 75.88377], [30.1667, 75.88395], [30.16642, 75.88411], [30.16609, 75.8844], [30.16577, 75.88478], [30.16556, 75.88515], [30.16527, 75.88583], [30.16498, 75.88665], [30.16476, 75.88722], [30.16452, 75.88781], [30.1643, 75.88819], [30.1641, 75.88844], [30.16391, 75.88865], [30.16363, 75.88887], [30.1632, 75.88919], [30.15935, 75.89213], [30.15911, 75.89232], [30.15674, 75.89408], [30.15612, 75.89463], [30.15546, 75.89529], [30.15487, 75.89588], [30.15445, 75.8964], [30.15415, 75.8968], [30.15367, 75.89749], [30.15261, 75.89913], [30.15209, 75.90005], [30.15167, 75.90077], [30.15123, 75.90149], [30.15109, 75.90168], [30.15086, 75.90195], [30.15061, 75.90219], [30.14838, 75.90394], [30.14821, 75.90409], [30.14497, 75.90707], [30.14343, 75.90848], [30.14137, 75.91039], [30.13998, 75.91163], [30.13695, 75.91416], [30.13494, 75.91582], [30.13382, 75.91669], [30.13301, 75.91726], [30.13107, 75.91851], [30.12971, 75.91944], [30.12969, 75.91946], [30.1272, 75.92125], [30.12712, 75.92131], [30.12489, 75.92293], [30.11802, 75.92793], [30.11709, 75.92865], [30.11053, 75.93421], [30.109, 75.93546], [30.10779, 75.93639], [30.10742, 75.93672], [30.10599, 75.93833], [30.10587, 75.93848], [30.10556, 75.93889], [30.10336, 75.94169], [30.10163, 75.9438], [30.09958, 75.9464], [30.09839, 75.94785], [30.09612, 75.95079], [30.09206, 75.95596], [30.08909, 75.95984], [30.08832, 75.96093], [30.08756, 75.96196], [30.08746, 75.96209], [30.08744, 75.96212], [30.08364, 75.96692], [30.08306, 75.96769], [30.0812, 75.97004], [30.08083, 75.97045], [30.0803, 75.97109], [30.07585, 75.97682], [30.07497, 75.97797], [30.07379, 75.97963], [30.07295, 75.98071], [30.07279, 75.9809], [30.07162, 75.98231], [30.07035, 75.98385], [30.06815, 75.98649], [30.06736, 75.98748], [30.06459, 75.99085], [30.06446, 75.991], [30.06168, 75.99434], [30.06117, 75.99496], [30.06105, 75.9951], [30.05814, 75.99865], [30.05652, 76.00057], [30.05632, 76.00082], [30.0557, 76.00151], [30.05439, 76.00317], [30.05156, 76.00654], [30.05099, 76.00697], [30.0467, 76.00901], [30.04649, 76.0091], [30.04469, 76.00996], [30.03596, 76.01403], [30.03471, 76.01463], [30.03306, 76.01536], [30.03215, 76.0157], [30.02757, 76.01722], [30.02493, 76.01806], [30.01213, 76.02233], [30.00975, 76.02308], [30.00022, 76.02629], [29.9895, 76.02989], [29.98915, 76.0301], [29.98906, 76.03018], [29.9874, 76.03174], [29.9844, 76.03456], [29.98432, 76.03463], [29.98237, 76.03648], [29.98136, 76.03739], [29.97881, 76.03971], [29.97816, 76.04033], [29.97696, 76.04137], [29.97651, 76.04182], [29.97632, 76.04217], [29.97504, 76.04337], [29.97374, 76.04464], [29.9734, 76.04491], [29.97201, 76.04622], [29.97226, 76.04732], [29.9725, 76.04863], [29.97313, 76.05162], [29.9733, 76.05245], [29.97332, 76.05271], [29.97328, 76.05294], [29.97209, 76.05574], [29.97116, 76.05805], [29.97089, 76.05869], [29.97023, 76.06194], [29.96974, 76.06293], [29.97017, 76.06332], [29.97117, 76.06415], [29.97257, 76.06525], [29.97436, 76.06672], [29.97627, 76.06833], [29.97824, 76.06996], [29.98078, 76.07214], [29.98267, 76.07369], [29.98558, 76.07619], [29.98754, 76.07781], [29.98965, 76.07961], [29.99058, 76.08044], [29.99268, 76.08222], [29.99461, 76.08387], [29.99541, 76.08455], [29.99638, 76.08527], [29.99748, 76.08618], [29.99901, 76.08749], [30.00061, 76.08882], [30.00185, 76.08988], [30.0043, 76.09192], [30.00734, 76.0945], [30.00908, 76.09596], [30.01401, 76.10014], [30.01474, 76.10073], [30.01501, 76.10095], [30.01557, 76.10146], [30.01583, 76.10165], [30.01599, 76.10173], [30.01627, 76.10178], [30.01674, 76.10183], [30.01709, 76.10191], [30.01734, 76.102], [30.01768, 76.10221], [30.0182, 76.10268], [30.01864, 76.10317], [30.01888, 76.10347], [30.01902, 76.10372], [30.01915, 76.10417], [30.01921, 76.10441], [30.01928, 76.10463], [30.01935, 76.10476], [30.01946, 76.10491], [30.02077, 76.10621], [30.02119, 76.10661], [30.01463, 76.1129], [30.01443, 76.11315], [30.01245, 76.11694], [30.01091, 76.11994], [30.009, 76.12358], [30.00784, 76.12567], [30.00537, 76.12958], [30.00535, 76.12965], [30.00533, 76.12973], [30.00526, 76.13289], [30.00521, 76.13303], [30.0051, 76.13317], [30.00371, 76.13481], [30.00354, 76.13495], [30.00341, 76.13495], [30.00278, 76.13471], [29.99864, 76.14328], [29.99822, 76.14463], [29.99796, 76.14506], [29.99666, 76.14641], [29.99661, 76.14665], [29.99651, 76.14713], [29.99639, 76.14786], [29.99574, 76.14903], [29.99524, 76.1499], [29.99426, 76.15167], [29.99087, 76.15795], [29.98913, 76.16111], [29.98993, 76.16139], [29.99038, 76.16153], [29.99121, 76.16176], [29.99762, 76.16363], [29.99769, 76.16366], [29.99782, 76.16377], [29.9993, 76.16622], [29.99947, 76.16642], [29.99999, 76.16689], [30.00074, 76.16753], [30.00199, 76.16847], [30.00219, 76.16862]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var circle_marker_120fec929ec418e500a847f6222b01e9 = L.circleMarker(
+                [29.97201, 76.04622],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+        var popup_8ba1bc24384b396b1c507ee664be19e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cdc24b76bc632cb2f4dc8ac1f270df02 = $(`<div id="html_cdc24b76bc632cb2f4dc8ac1f270df02" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 65.5, Risk: Medium</div>`)[0];
+                popup_8ba1bc24384b396b1c507ee664be19e9.setContent(html_cdc24b76bc632cb2f4dc8ac1f270df02);
+            
+        
+
+        circle_marker_120fec929ec418e500a847f6222b01e9.bindPopup(popup_8ba1bc24384b396b1c507ee664be19e9)
+        ;
+
+        
+    
+    
+            var circle_marker_2231ae9c6b0b10344ab816abf36e4c56 = L.circleMarker(
+                [29.96974, 76.06293],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+        var popup_b46991cdbad781b2b1210f60dc406b1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05103dbb99774839ff3806d8f54bd504 = $(`<div id="html_05103dbb99774839ff3806d8f54bd504" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 81.6, Risk: Medium</div>`)[0];
+                popup_b46991cdbad781b2b1210f60dc406b1f.setContent(html_05103dbb99774839ff3806d8f54bd504);
+            
+        
+
+        circle_marker_2231ae9c6b0b10344ab816abf36e4c56.bindPopup(popup_b46991cdbad781b2b1210f60dc406b1f)
+        ;
+
+        
+    
+    
+            var circle_marker_9868ecf6c41627ecf7075d29f5759657 = L.circleMarker(
+                [30.02119, 76.10661],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+        var popup_8d77fe145ca197e82bde37b5c523bf17 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b3262c564e25c66d8eb8d958d9fc4f3 = $(`<div id="html_8b3262c564e25c66d8eb8d958d9fc4f3" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 100.8, Risk: High</div>`)[0];
+                popup_8d77fe145ca197e82bde37b5c523bf17.setContent(html_8b3262c564e25c66d8eb8d958d9fc4f3);
+            
+        
+
+        circle_marker_9868ecf6c41627ecf7075d29f5759657.bindPopup(popup_8d77fe145ca197e82bde37b5c523bf17)
+        ;
+
+        
+    
+    
+            var circle_marker_ce5756cb329792689043100dddb5077b = L.circleMarker(
+                [30.00278, 76.13471],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+        var popup_aab97ca27c5f2271b9f8dd62ac34aad2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_959b81639b6d67051fd76f0cdc214916 = $(`<div id="html_959b81639b6d67051fd76f0cdc214916" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 79.1, Risk: Medium</div>`)[0];
+                popup_aab97ca27c5f2271b9f8dd62ac34aad2.setContent(html_959b81639b6d67051fd76f0cdc214916);
+            
+        
+
+        circle_marker_ce5756cb329792689043100dddb5077b.bindPopup(popup_aab97ca27c5f2271b9f8dd62ac34aad2)
+        ;
+
+        
+    
+    
+            var circle_marker_67c1ec6927362daa22507fe355ffdad6 = L.circleMarker(
+                [29.98913, 76.16111],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+        var popup_0fb9c3593186509a4678c5c5c1c584d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_138e972c6a862354562dbbf13ece1592 = $(`<div id="html_138e972c6a862354562dbbf13ece1592" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 105.6, Risk: High</div>`)[0];
+                popup_0fb9c3593186509a4678c5c5c1c584d4.setContent(html_138e972c6a862354562dbbf13ece1592);
+            
+        
+
+        circle_marker_67c1ec6927362daa22507fe355ffdad6.bindPopup(popup_0fb9c3593186509a4678c5c5c1c584d4)
+        ;
+
+        
+    
+    
+            var marker_1685b875d824454fa5e9b4600bb7738f = L.marker(
+                [29.972875000000002, 76.04543000000001],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_6844ffa78a0be47cff21f2845768fe34 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76dcf055734d68a52d6a91fb2f3781c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b622e53130c8945baed4f16e7c7ca52 = $(`<div id="html_3b622e53130c8945baed4f16e7c7ca52" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 33093.3m, Risk: High</div>`)[0];
+                popup_76dcf055734d68a52d6a91fb2f3781c3.setContent(html_3b622e53130c8945baed4f16e7c7ca52);
+            
+        
+
+        marker_1685b875d824454fa5e9b4600bb7738f.bindPopup(popup_76dcf055734d68a52d6a91fb2f3781c3)
+        ;
+
+        
+    
+    
+                marker_1685b875d824454fa5e9b4600bb7738f.setIcon(icon_6844ffa78a0be47cff21f2845768fe34);
+            
+    
+            var marker_a4dcad027f096f008969ae558eb7fc5c = L.marker(
+                [29.970315, 76.06081],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_4fff9a558e4184a03928e715f79759eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ba5c372e0fb3dbe01e6035897fc8a3a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_161578039a36195190b4fd0f0ecee0ea = $(`<div id="html_161578039a36195190b4fd0f0ecee0ea" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 34806.3m, Risk: High</div>`)[0];
+                popup_0ba5c372e0fb3dbe01e6035897fc8a3a.setContent(html_161578039a36195190b4fd0f0ecee0ea);
+            
+        
+
+        marker_a4dcad027f096f008969ae558eb7fc5c.bindPopup(popup_0ba5c372e0fb3dbe01e6035897fc8a3a)
+        ;
+
+        
+    
+    
+                marker_a4dcad027f096f008969ae558eb7fc5c.setIcon(icon_4fff9a558e4184a03928e715f79759eb);
+            
+    
+            var marker_81b51009c06a365a560f076a3e2e307f = L.marker(
+                [30.020325, 76.10576],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_ad2130b824aa4af2d922906943158f5c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ddd5639e255198084eeac7008e023f0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d714350d19a3db4590b976c02805b58 = $(`<div id="html_2d714350d19a3db4590b976c02805b58" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 41938.6m, Risk: High</div>`)[0];
+                popup_ddd5639e255198084eeac7008e023f0e.setContent(html_2d714350d19a3db4590b976c02805b58);
+            
+        
+
+        marker_81b51009c06a365a560f076a3e2e307f.bindPopup(popup_ddd5639e255198084eeac7008e023f0e)
+        ;
+
+        
+    
+    
+                marker_81b51009c06a365a560f076a3e2e307f.setIcon(icon_ad2130b824aa4af2d922906943158f5c);
+            
+    
+            var marker_e52a925aa63a8fe866f19d7e5028bb15 = L.marker(
+                [30.00316, 76.13483],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_2a75a91f4fee4b1640f321da96d9dae5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f89561e156d2147407ec3185f29be19 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_367cfc6073379efab120fb7c9a5c6262 = $(`<div id="html_367cfc6073379efab120fb7c9a5c6262" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 45481.3m, Risk: High</div>`)[0];
+                popup_2f89561e156d2147407ec3185f29be19.setContent(html_367cfc6073379efab120fb7c9a5c6262);
+            
+        
+
+        marker_e52a925aa63a8fe866f19d7e5028bb15.bindPopup(popup_2f89561e156d2147407ec3185f29be19)
+        ;
+
+        
+    
+    
+                marker_e52a925aa63a8fe866f19d7e5028bb15.setIcon(icon_2a75a91f4fee4b1640f321da96d9dae5);
+            
+    
+            var marker_7dbfaba8224c59317439136fc9bd7e7b = L.marker(
+                [29.991695, 76.15638999999999],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_8a665f5a19a7e92aaa33d15df811e36c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1da0ff4f843a6d3007eca6de1655807c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be44307c0422f2b66093726f03b3af3a = $(`<div id="html_be44307c0422f2b66093726f03b3af3a" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 48464.0m, Risk: High</div>`)[0];
+                popup_1da0ff4f843a6d3007eca6de1655807c.setContent(html_be44307c0422f2b66093726f03b3af3a);
+            
+        
+
+        marker_7dbfaba8224c59317439136fc9bd7e7b.bindPopup(popup_1da0ff4f843a6d3007eca6de1655807c)
+        ;
+
+        
+    
+    
+                marker_7dbfaba8224c59317439136fc9bd7e7b.setIcon(icon_8a665f5a19a7e92aaa33d15df811e36c);
+            
+    
+            var marker_6486f9babc673b95da88892c758880f6 = L.marker(
+                [30.15758359999999, 75.8960589],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_dd7bf8de5d967277da335ca4e6113295 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b4dc7110b371d266e6b217ce7a6e0426 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce8e70d98f38681a52defa5925c8c962 = $(`<div id="html_ce8e70d98f38681a52defa5925c8c962" style="width: 100.0%; height: 100.0%;">Hospital: Govenment Veternary Hospital - 5V5W+2CM, Mahlan</div>`)[0];
+                popup_b4dc7110b371d266e6b217ce7a6e0426.setContent(html_ce8e70d98f38681a52defa5925c8c962);
+            
+        
+
+        marker_6486f9babc673b95da88892c758880f6.bindPopup(popup_b4dc7110b371d266e6b217ce7a6e0426)
+        ;
+
+        
+    
+    
+                marker_6486f9babc673b95da88892c758880f6.setIcon(icon_dd7bf8de5d967277da335ca4e6113295);
+            
+    
+            var marker_984680a383d8de4464753cf389466596 = L.marker(
+                [30.1082113, 75.9366189],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_48b0b37fc91a4f0bf42e44924f36d1ed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a53db6e2293c7b28a73a06dbd98305d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_21d2e75e2adb9eeefd50ea1828a6fd3a = $(`<div id="html_21d2e75e2adb9eeefd50ea1828a6fd3a" style="width: 100.0%; height: 100.0%;">Hospital: Uppal Hospital, Sular Gharat - 4W5P+7JQ, Sullar Gharat</div>`)[0];
+                popup_a53db6e2293c7b28a73a06dbd98305d6.setContent(html_21d2e75e2adb9eeefd50ea1828a6fd3a);
+            
+        
+
+        marker_984680a383d8de4464753cf389466596.bindPopup(popup_a53db6e2293c7b28a73a06dbd98305d6)
+        ;
+
+        
+    
+    
+                marker_984680a383d8de4464753cf389466596.setIcon(icon_48b0b37fc91a4f0bf42e44924f36d1ed);
+            
+    
+            var marker_031d0985fc9e2cf62204f5b5e169c449 = L.marker(
+                [30.1071565, 75.9376456],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_16c930270fdc19415f68976eb7ef5aab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ff9f121cca23c08120365da9e030d868 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64ad76742eed9df88baa86a6840e10dc = $(`<div id="html_64ad76742eed9df88baa86a6840e10dc" style="width: 100.0%; height: 100.0%;">Hospital: Sain X-ray and physiotherapy centre - 4W4P+QWW, Sullar Gharat</div>`)[0];
+                popup_ff9f121cca23c08120365da9e030d868.setContent(html_64ad76742eed9df88baa86a6840e10dc);
+            
+        
+
+        marker_031d0985fc9e2cf62204f5b5e169c449.bindPopup(popup_ff9f121cca23c08120365da9e030d868)
+        ;
+
+        
+    
+    
+                marker_031d0985fc9e2cf62204f5b5e169c449.setIcon(icon_16c930270fdc19415f68976eb7ef5aab);
+            
+    
+            var marker_70bbc5f1e6d8cdffe87d3907d2423bf3 = L.marker(
+                [30.1089022, 75.93536759999999],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_1b0f31b01f670f97a436e5e7879691c6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ddedfe5aa5fb058fa94e4f22be355ac8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_544eac2ee34b28eadf576d6ddc30c8a4 = $(`<div id="html_544eac2ee34b28eadf576d6ddc30c8a4" style="width: 100.0%; height: 100.0%;">Hospital: ACUPRESSURE HEALTH CARE CENTRE.(REGD.) SULLAR-GHARAT - Sangrur, Road, Sullar Gharat</div>`)[0];
+                popup_ddedfe5aa5fb058fa94e4f22be355ac8.setContent(html_544eac2ee34b28eadf576d6ddc30c8a4);
+            
+        
+
+        marker_70bbc5f1e6d8cdffe87d3907d2423bf3.bindPopup(popup_ddedfe5aa5fb058fa94e4f22be355ac8)
+        ;
+
+        
+    
+    
+                marker_70bbc5f1e6d8cdffe87d3907d2423bf3.setIcon(icon_1b0f31b01f670f97a436e5e7879691c6);
+            
+    
+            var marker_6db6727187bac4a0838028c117e9a4e2 = L.marker(
+                [30.1052347, 75.93896149999999],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_3354811e9f6356130d1c317ee98fac10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_07ca56d38534d6ce7d036bff3970fa77 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c41a4ccf7be38074376e6cd5481ff2a = $(`<div id="html_9c41a4ccf7be38074376e6cd5481ff2a" style="width: 100.0%; height: 100.0%;">Hospital: Saron Physiotherapy - near daana mandi, Sullar Gharat</div>`)[0];
+                popup_07ca56d38534d6ce7d036bff3970fa77.setContent(html_9c41a4ccf7be38074376e6cd5481ff2a);
+            
+        
+
+        marker_6db6727187bac4a0838028c117e9a4e2.bindPopup(popup_07ca56d38534d6ce7d036bff3970fa77)
+        ;
+
+        
+    
+    
+                marker_6db6727187bac4a0838028c117e9a4e2.setIcon(icon_3354811e9f6356130d1c317ee98fac10);
+            
+    
+            var marker_52c5b7803c98668dff97f3fe49ad0d36 = L.marker(
+                [30.063005, 75.9910252],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_7536cf344ffe9dd6652fc01e0015baaa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_74755d177253a3f063a7811eb17ceb6a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d2e233b415c377b9e1190b8619bbe384 = $(`<div id="html_d2e233b415c377b9e1190b8619bbe384" style="width: 100.0%; height: 100.0%;">Hospital: suby hospital - Dr. Jagdish Sharma - 3X7R+6C2, Dirba</div>`)[0];
+                popup_74755d177253a3f063a7811eb17ceb6a.setContent(html_d2e233b415c377b9e1190b8619bbe384);
+            
+        
+
+        marker_52c5b7803c98668dff97f3fe49ad0d36.bindPopup(popup_74755d177253a3f063a7811eb17ceb6a)
+        ;
+
+        
+    
+    
+                marker_52c5b7803c98668dff97f3fe49ad0d36.setIcon(icon_7536cf344ffe9dd6652fc01e0015baaa);
+            
+    
+            var marker_10ae0e5c018187a73b6e6d36aef04995 = L.marker(
+                [30.0653202, 75.9929259],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_5c593e7086f4fbb2be7812d084680d83 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_45036faaef138d8a41ce172e53b9ec54 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f050e3507a64ae253511c3d8095083ef = $(`<div id="html_f050e3507a64ae253511c3d8095083ef" style="width: 100.0%; height: 100.0%;">Hospital: Dr Lal PathLabs - Patient Service Centre - Shop No 15, Sher-E-Punjab Market, near Cooperative Bank, Dirba</div>`)[0];
+                popup_45036faaef138d8a41ce172e53b9ec54.setContent(html_f050e3507a64ae253511c3d8095083ef);
+            
+        
+
+        marker_10ae0e5c018187a73b6e6d36aef04995.bindPopup(popup_45036faaef138d8a41ce172e53b9ec54)
+        ;
+
+        
+    
+    
+                marker_10ae0e5c018187a73b6e6d36aef04995.setIcon(icon_5c593e7086f4fbb2be7812d084680d83);
+            
+    
+            var marker_4d394cb1fe56c6f2a48c1ba4e3241827 = L.marker(
+                [30.0636904, 75.9932343],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_08516e1cee17cd1273dc65023c452208 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_95326d81998dff3196fedf419f316452 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6dbb7946812425d99e77fe2d6264e9d = $(`<div id="html_b6dbb7946812425d99e77fe2d6264e9d" style="width: 100.0%; height: 100.0%;">Hospital: VS pharmaceuticals - 3X7V+F76, Dirba</div>`)[0];
+                popup_95326d81998dff3196fedf419f316452.setContent(html_b6dbb7946812425d99e77fe2d6264e9d);
+            
+        
+
+        marker_4d394cb1fe56c6f2a48c1ba4e3241827.bindPopup(popup_95326d81998dff3196fedf419f316452)
+        ;
+
+        
+    
+    
+                marker_4d394cb1fe56c6f2a48c1ba4e3241827.setIcon(icon_08516e1cee17cd1273dc65023c452208);
+            
+    
+            var marker_5070a2d65fcfe93ff9c984deb00c148c = L.marker(
+                [30.0661219, 75.9885828],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_1f380e3f378afe748d7076d684776f21 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4b694c17d9ba367c831b250f84d7727f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4dd321dd41c804d7d32084fe692686cd = $(`<div id="html_4dd321dd41c804d7d32084fe692686cd" style="width: 100.0%; height: 100.0%;">Hospital: Garg Hospital - under the bridge, Sangrur road, Dirba</div>`)[0];
+                popup_4b694c17d9ba367c831b250f84d7727f.setContent(html_4dd321dd41c804d7d32084fe692686cd);
+            
+        
+
+        marker_5070a2d65fcfe93ff9c984deb00c148c.bindPopup(popup_4b694c17d9ba367c831b250f84d7727f)
+        ;
+
+        
+    
+    
+                marker_5070a2d65fcfe93ff9c984deb00c148c.setIcon(icon_1f380e3f378afe748d7076d684776f21);
+            
+    
+            var marker_94e85d2605df258482f0583b49dcaa28 = L.marker(
+                [30.0618596, 75.98956009999999],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_af328e9d0849ad2dc152e5517de94e4e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2dc50afdf528706867519966a2897c1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_890a3b5d44c85aafdc5e15e632d71760 = $(`<div id="html_890a3b5d44c85aafdc5e15e632d71760" style="width: 100.0%; height: 100.0%;">Hospital: CHANNA HOSPITAL - Best Hospital In Dirba - Kauhrian - Patran Road, Dirba</div>`)[0];
+                popup_2dc50afdf528706867519966a2897c1f.setContent(html_890a3b5d44c85aafdc5e15e632d71760);
+            
+        
+
+        marker_94e85d2605df258482f0583b49dcaa28.bindPopup(popup_2dc50afdf528706867519966a2897c1f)
+        ;
+
+        
+    
+    
+                marker_94e85d2605df258482f0583b49dcaa28.setIcon(icon_af328e9d0849ad2dc152e5517de94e4e);
+            
+    
+            var marker_2c2de67c744b9c459e063c0699d45d38 = L.marker(
+                [30.0667129, 75.987875],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_6707b75bf689c37f96d649200f215707 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1960c061ba367535b5358d49b0a440da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c94df0e8414860efa812958b1bea4f13 = $(`<div id="html_c94df0e8414860efa812958b1bea4f13" style="width: 100.0%; height: 100.0%;">Hospital: Krishna hospital - no 52, Krishna hospital, opposite dirba mandi road Sangrur patran, Highway, Dirba</div>`)[0];
+                popup_1960c061ba367535b5358d49b0a440da.setContent(html_c94df0e8414860efa812958b1bea4f13);
+            
+        
+
+        marker_2c2de67c744b9c459e063c0699d45d38.bindPopup(popup_1960c061ba367535b5358d49b0a440da)
+        ;
+
+        
+    
+    
+                marker_2c2de67c744b9c459e063c0699d45d38.setIcon(icon_6707b75bf689c37f96d649200f215707);
+            
+    
+            var marker_7140d642bca9d7a0dbb50fb5b344cb95 = L.marker(
+                [30.0620592, 75.9934536],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_311d4c5a9687deb810b49a975330e678 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8a13360eaa59fbbebcb00de8e4471c78 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f725cf349940221e66fd6afc56c538e = $(`<div id="html_5f725cf349940221e66fd6afc56c538e" style="width: 100.0%; height: 100.0%;">Hospital: Nagi Multispeciality Hospital - Prem Niwas, Golden City, Dirba</div>`)[0];
+                popup_8a13360eaa59fbbebcb00de8e4471c78.setContent(html_5f725cf349940221e66fd6afc56c538e);
+            
+        
+
+        marker_7140d642bca9d7a0dbb50fb5b344cb95.bindPopup(popup_8a13360eaa59fbbebcb00de8e4471c78)
+        ;
+
+        
+    
+    
+                marker_7140d642bca9d7a0dbb50fb5b344cb95.setIcon(icon_311d4c5a9687deb810b49a975330e678);
+            
+    
+            var marker_8eb8e44e0039c00ec3e81e37ce8b9c33 = L.marker(
+                [30.0678254, 75.99329569999999],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_a220712205990d05067b282e5dc8cc79 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8c4df0789da4ee95590efca18e06330a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_34e4c5ede86b086ba48d7c3e47cd18f0 = $(`<div id="html_34e4c5ede86b086ba48d7c3e47cd18f0" style="width: 100.0%; height: 100.0%;">Hospital: Dr Shelly Hospital - Shelly Hospital, Link Road, Dirba</div>`)[0];
+                popup_8c4df0789da4ee95590efca18e06330a.setContent(html_34e4c5ede86b086ba48d7c3e47cd18f0);
+            
+        
+
+        marker_8eb8e44e0039c00ec3e81e37ce8b9c33.bindPopup(popup_8c4df0789da4ee95590efca18e06330a)
+        ;
+
+        
+    
+    
+                marker_8eb8e44e0039c00ec3e81e37ce8b9c33.setIcon(icon_a220712205990d05067b282e5dc8cc79);
+            
+    
+            var marker_cf26c69444ab564fa2bdf14552cad7a9 = L.marker(
+                [30.0681977, 75.99378109999999],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_3c3945b3d92013d068463405351a702b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e22db14cbdd92d6b90354d7d221a6bc4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7682138d3412e6262147577930ed98bf = $(`<div id="html_7682138d3412e6262147577930ed98bf" style="width: 100.0%; height: 100.0%;">Hospital: Sanjeevni Hospital - 3X9V+7GC, link road, Dirba</div>`)[0];
+                popup_e22db14cbdd92d6b90354d7d221a6bc4.setContent(html_7682138d3412e6262147577930ed98bf);
+            
+        
+
+        marker_cf26c69444ab564fa2bdf14552cad7a9.bindPopup(popup_e22db14cbdd92d6b90354d7d221a6bc4)
+        ;
+
+        
+    
+    
+                marker_cf26c69444ab564fa2bdf14552cad7a9.setIcon(icon_3c3945b3d92013d068463405351a702b);
+            
+    
+            var marker_0acaf9583197edd5d677558915d9ed26 = L.marker(
+                [30.0037393, 76.1706249],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_9301ffcbf615bf01b788e9ed470fcc96 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_283025904b5b5e3758772ab35a3b5c7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5561a40665a42fa140215a88cc88e33b = $(`<div id="html_5561a40665a42fa140215a88cc88e33b" style="width: 100.0%; height: 100.0%;">Hospital: Govt. hospital badshahpur - 253C+F6X, Badshahpur Road, Badshahpur</div>`)[0];
+                popup_283025904b5b5e3758772ab35a3b5c7e.setContent(html_5561a40665a42fa140215a88cc88e33b);
+            
+        
+
+        marker_0acaf9583197edd5d677558915d9ed26.bindPopup(popup_283025904b5b5e3758772ab35a3b5c7e)
+        ;
+
+        
+    
+    
+                marker_0acaf9583197edd5d677558915d9ed26.setIcon(icon_9301ffcbf615bf01b788e9ed470fcc96);
+            
+    
+            var marker_506bdbaffb8b61f4d5d2e72095ad9938 = L.marker(
+                [30.0042113, 76.1703228],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_152b34971690d6944fb8d25d7d7ff9b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0afe2c548b5539eb2b548e90e395a37e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46d5ff62a1c4e0c3a899849f550f6c87 = $(`<div id="html_46d5ff62a1c4e0c3a899849f550f6c87" style="width: 100.0%; height: 100.0%;">Hospital: Jammu Medical Store - Samana Road, Badshahpur</div>`)[0];
+                popup_0afe2c548b5539eb2b548e90e395a37e.setContent(html_46d5ff62a1c4e0c3a899849f550f6c87);
+            
+        
+
+        marker_506bdbaffb8b61f4d5d2e72095ad9938.bindPopup(popup_0afe2c548b5539eb2b548e90e395a37e)
+        ;
+
+        
+    
+    
+                marker_506bdbaffb8b61f4d5d2e72095ad9938.setIcon(icon_152b34971690d6944fb8d25d7d7ff9b3);
+            
+    
+            var marker_b7e58e8d18fa266032d9e1c88b2400e0 = L.marker(
+                [30.00419779999999, 76.1704934],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_e340fed8c1f80e1dfcce005843837108 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c149c98e238c2835a50c3c0c8cec1ae7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2394a2591bd9d21c66ade783351cde98 = $(`<div id="html_2394a2591bd9d21c66ade783351cde98" style="width: 100.0%; height: 100.0%;">Hospital: CHC Badshahpur - 253C+M5H, Badshahpur Road, Badshahpur</div>`)[0];
+                popup_c149c98e238c2835a50c3c0c8cec1ae7.setContent(html_2394a2591bd9d21c66ade783351cde98);
+            
+        
+
+        marker_b7e58e8d18fa266032d9e1c88b2400e0.bindPopup(popup_c149c98e238c2835a50c3c0c8cec1ae7)
+        ;
+
+        
+    
+    
+                marker_b7e58e8d18fa266032d9e1c88b2400e0.setIcon(icon_e340fed8c1f80e1dfcce005843837108);
+            
+    
+            var marker_fa53dab8e19cc8241c8f29b86bda5dc8 = L.marker(
+                [30.158691, 75.891262],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_13c3154d809aeec90e53be1c3bd0695b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc81ae52fa09778232926f74294ac8a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_884c312b9e98b3735055109fcaf584d2 = $(`<div id="html_884c312b9e98b3735055109fcaf584d2" style="width: 100.0%; height: 100.0%;">Gas_Station: IndianOil - Ground Floor B Garh Sunam Rd, Mehlan, Chawk, Badrukhan</div>`)[0];
+                popup_bc81ae52fa09778232926f74294ac8a4.setContent(html_884c312b9e98b3735055109fcaf584d2);
+            
+        
+
+        marker_fa53dab8e19cc8241c8f29b86bda5dc8.bindPopup(popup_bc81ae52fa09778232926f74294ac8a4)
+        ;
+
+        
+    
+    
+                marker_fa53dab8e19cc8241c8f29b86bda5dc8.setIcon(icon_13c3154d809aeec90e53be1c3bd0695b);
+            
+    
+            var marker_13e6aa98d53e162506e30dd7db1febf6 = L.marker(
+                [30.1083876, 75.9361059],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_778a2eae089c09d143945a02fc710e06 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5bb702918c63fc4e5b53ff9434b5ba28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_369524fc3d761a2a67a718ffc5d0e954 = $(`<div id="html_369524fc3d761a2a67a718ffc5d0e954" style="width: 100.0%; height: 100.0%;">Gas_Station: IndianOil - Ground Floor, NH 71, Jind Road, Sulargarahat, Gujran</div>`)[0];
+                popup_5bb702918c63fc4e5b53ff9434b5ba28.setContent(html_369524fc3d761a2a67a718ffc5d0e954);
+            
+        
+
+        marker_13e6aa98d53e162506e30dd7db1febf6.bindPopup(popup_5bb702918c63fc4e5b53ff9434b5ba28)
+        ;
+
+        
+    
+    
+                marker_13e6aa98d53e162506e30dd7db1febf6.setIcon(icon_778a2eae089c09d143945a02fc710e06);
+            
+    
+            var marker_6090360a09685b1d82f63823295734b5 = L.marker(
+                [30.1085168, 75.9359826],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_64acb423c23d7ce100cc9ad7af841f9c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f2f393ddff3de607bb940ae21aed437e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7425b5b6ae14bc8853765bd42d860209 = $(`<div id="html_7425b5b6ae14bc8853765bd42d860209" style="width: 100.0%; height: 100.0%;">Gas_Station: TRHR PETROL PUMP - 4W5P+C95, Sullar Gharat</div>`)[0];
+                popup_f2f393ddff3de607bb940ae21aed437e.setContent(html_7425b5b6ae14bc8853765bd42d860209);
+            
+        
+
+        marker_6090360a09685b1d82f63823295734b5.bindPopup(popup_f2f393ddff3de607bb940ae21aed437e)
+        ;
+
+        
+    
+    
+                marker_6090360a09685b1d82f63823295734b5.setIcon(icon_64acb423c23d7ce100cc9ad7af841f9c);
+            
+    
+            var marker_520c50817713cb74ea52f5e071a680b9 = L.marker(
+                [30.0662001, 75.98920009999999],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_6cb5beb79c1bc640393e87fbbd3021f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_915198645aa835bbc279bcc8b31a4ba0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d719966ac7b9c3ba8ef54f236e9d1de = $(`<div id="html_1d719966ac7b9c3ba8ef54f236e9d1de" style="width: 100.0%; height: 100.0%;">Gas_Station: IndianOil - Ground Floor, NH 71, Dirba - Sangrur Road, Gujran</div>`)[0];
+                popup_915198645aa835bbc279bcc8b31a4ba0.setContent(html_1d719966ac7b9c3ba8ef54f236e9d1de);
+            
+        
+
+        marker_520c50817713cb74ea52f5e071a680b9.bindPopup(popup_915198645aa835bbc279bcc8b31a4ba0)
+        ;
+
+        
+    
+    
+                marker_520c50817713cb74ea52f5e071a680b9.setIcon(icon_6cb5beb79c1bc640393e87fbbd3021f3);
+            
+    
+            var marker_b07ab063e3460e452f9ec489dee11ebf = L.marker(
+                [29.973436, 76.066261],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_12ad22edd781e7189b3eb701dd224329 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_24545da174dae7fba92df863fb974655 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e8b04a35bc64a5a922a36fbc4abc4fa0 = $(`<div id="html_e8b04a35bc64a5a922a36fbc4abc4fa0" style="width: 100.0%; height: 100.0%;">Gas_Station: HP PETROL PUMP - NIAL H P CENTRE - HPC Petrol Pump Nial, Chandigarh</div>`)[0];
+                popup_24545da174dae7fba92df863fb974655.setContent(html_e8b04a35bc64a5a922a36fbc4abc4fa0);
+            
+        
+
+        marker_b07ab063e3460e452f9ec489dee11ebf.bindPopup(popup_24545da174dae7fba92df863fb974655)
+        ;
+
+        
+    
+    
+                marker_b07ab063e3460e452f9ec489dee11ebf.setIcon(icon_12ad22edd781e7189b3eb701dd224329);
+            
+    
+            var marker_8b8e37bf83ebd75801a29564d9c89df4 = L.marker(
+                [30.00230810000001, 76.16885189999999],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_1e3567d738346739478e7fab71182d9b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb4dd8736548a75c809d5b7fa05e2eda = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24a7d128a66560489e591f740874295f = $(`<div id="html_24a7d128a66560489e591f740874295f" style="width: 100.0%; height: 100.0%;">Gas_Station: IndianOil - Ground Floor Patiala Shutrana, Road, Badshahpur</div>`)[0];
+                popup_bb4dd8736548a75c809d5b7fa05e2eda.setContent(html_24a7d128a66560489e591f740874295f);
+            
+        
+
+        marker_8b8e37bf83ebd75801a29564d9c89df4.bindPopup(popup_bb4dd8736548a75c809d5b7fa05e2eda)
+        ;
+
+        
+    
+    
+                marker_8b8e37bf83ebd75801a29564d9c89df4.setIcon(icon_1e3567d738346739478e7fab71182d9b);
+            
+    
+            var marker_911179af93b0bb3d5e40fd1b06508a6d = L.marker(
+                [30.1583277, 75.8933303],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_99c2ddea88f503a13506c3af0eca09ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_559bfa162072831760b69fba5768e6a4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4347d04bbabcb0c21d37a088b1659d1 = $(`<div id="html_a4347d04bbabcb0c21d37a088b1659d1" style="width: 100.0%; height: 100.0%;">Police: Police Station, Mehlan - 5V5V+88P, Mahlan</div>`)[0];
+                popup_559bfa162072831760b69fba5768e6a4.setContent(html_a4347d04bbabcb0c21d37a088b1659d1);
+            
+        
+
+        marker_911179af93b0bb3d5e40fd1b06508a6d.bindPopup(popup_559bfa162072831760b69fba5768e6a4)
+        ;
+
+        
+    
+    
+                marker_911179af93b0bb3d5e40fd1b06508a6d.setIcon(icon_99c2ddea88f503a13506c3af0eca09ca);
+            
+    
+            var marker_b2d8d3f9ff31abeefd7c7ecad5fd0b58 = L.marker(
+                [30.1056252, 75.9393383],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_eefe3371cfd254d8b8a81b6dfc5dba00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_da5c9c322e34d9430f34f9d20196aeb9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d59a25c06283832c2ceaac2d8553cd6 = $(`<div id="html_8d59a25c06283832c2ceaac2d8553cd6" style="width: 100.0%; height: 100.0%;">Police: Garatan DSP Police - 4W4Q+7P4, Sullar Gharat</div>`)[0];
+                popup_da5c9c322e34d9430f34f9d20196aeb9.setContent(html_8d59a25c06283832c2ceaac2d8553cd6);
+            
+        
+
+        marker_b2d8d3f9ff31abeefd7c7ecad5fd0b58.bindPopup(popup_da5c9c322e34d9430f34f9d20196aeb9)
+        ;
+
+        
+    
+    
+                marker_b2d8d3f9ff31abeefd7c7ecad5fd0b58.setIcon(icon_eefe3371cfd254d8b8a81b6dfc5dba00);
+            
+    
+            var marker_2058285a9812c99a9b345af09c957dcc = L.marker(
+                [30.0032627, 76.168323],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_fa7245f671cc0571085ab40964e9a976 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1be8465ff5822090e1c9158e95ef7952 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2de0e0e49c144b1e7159e76ee5236085 = $(`<div id="html_2de0e0e49c144b1e7159e76ee5236085" style="width: 100.0%; height: 100.0%;">Police: Police station - 2539+884, Patiala</div>`)[0];
+                popup_1be8465ff5822090e1c9158e95ef7952.setContent(html_2de0e0e49c144b1e7159e76ee5236085);
+            
+        
+
+        marker_2058285a9812c99a9b345af09c957dcc.bindPopup(popup_1be8465ff5822090e1c9158e95ef7952)
+        ;
+
+        
+    
+    
+                marker_2058285a9812c99a9b345af09c957dcc.setIcon(icon_fa7245f671cc0571085ab40964e9a976);
+            
+    
+            var marker_fafe8f00a5723a257326c2184b4e66af = L.marker(
+                [30.0682084, 75.9859997],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_78d2aac0d11f2b7a7e8e388825995db0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f7d24cef3e368a6b6b3b2ee1c7cc5e34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6ee0351e7336b737448663b22603659 = $(`<div id="html_c6ee0351e7336b737448663b22603659" style="width: 100.0%; height: 100.0%;">Puncture_Shop: Garg Tyres Plaza - Dirba - Sangrur Rd, Dirba</div>`)[0];
+                popup_f7d24cef3e368a6b6b3b2ee1c7cc5e34.setContent(html_c6ee0351e7336b737448663b22603659);
+            
+        
+
+        marker_fafe8f00a5723a257326c2184b4e66af.bindPopup(popup_f7d24cef3e368a6b6b3b2ee1c7cc5e34)
+        ;
+
+        
+    
+    
+                marker_fafe8f00a5723a257326c2184b4e66af.setIcon(icon_78d2aac0d11f2b7a7e8e388825995db0);
+            
+    
+            var marker_3c8522f8972773c43fd466c3dc84d805 = L.marker(
+                [30.0672438, 75.9872359],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_d71bc4a28e6cf2b0be8eca403ffc236c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4eb644ae2d919d8dbc36fb14415ccd9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e90905770a9fc3f72499929a3bc81ce5 = $(`<div id="html_e90905770a9fc3f72499929a3bc81ce5" style="width: 100.0%; height: 100.0%;">Puncture_Shop: Yokohama Club Network - Agam Tyre Plaza - Sangrur Road, near MLA Road, Sunam, Dirba</div>`)[0];
+                popup_f4eb644ae2d919d8dbc36fb14415ccd9.setContent(html_e90905770a9fc3f72499929a3bc81ce5);
+            
+        
+
+        marker_3c8522f8972773c43fd466c3dc84d805.bindPopup(popup_f4eb644ae2d919d8dbc36fb14415ccd9)
+        ;
+
+        
+    
+    
+                marker_3c8522f8972773c43fd466c3dc84d805.setIcon(icon_d71bc4a28e6cf2b0be8eca403ffc236c);
+            
+    
+            var marker_0b71d18253651f2ca665a47fe7ced3b8 = L.marker(
+                [29.9732892, 76.066197],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_444d5b92b52630e3028c69cd6b4edb1b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8de2a855ec0c953e6ad64daba35a0094 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_393def2622ecd34a968dfbce2fc99798 = $(`<div id="html_393def2622ecd34a968dfbce2fc99798" style="width: 100.0%; height: 100.0%;">Puncture_Shop: Apollo Tyres - Baba Deep Singh Tyre Plaza - Patiala Rd, near Reliance Pump, Patran, Patiala</div>`)[0];
+                popup_8de2a855ec0c953e6ad64daba35a0094.setContent(html_393def2622ecd34a968dfbce2fc99798);
+            
+        
+
+        marker_0b71d18253651f2ca665a47fe7ced3b8.bindPopup(popup_8de2a855ec0c953e6ad64daba35a0094)
+        ;
+
+        
+    
+    
+                marker_0b71d18253651f2ca665a47fe7ced3b8.setIcon(icon_444d5b92b52630e3028c69cd6b4edb1b);
+            
+    
+            var marker_8f091b07642bddba9e3cf010805403c0 = L.marker(
+                [29.9768367, 76.06922329999999],
+                {
+}
+            ).addTo(map_1a689bb2e6e9d957279f431265aada38);
+        
+    
+            var icon_0b2f853276d282f27385f3f0c18aa940 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_409d3df99918e690733116a731e566c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e0455dd1a0143845b17901c4ace22c7 = $(`<div id="html_5e0455dd1a0143845b17901c4ace22c7" style="width: 100.0%; height: 100.0%;">Puncture_Shop: Baba deep singh tyre plaza patran road ok - X3G9+F4M, Nial</div>`)[0];
+                popup_409d3df99918e690733116a731e566c3.setContent(html_5e0455dd1a0143845b17901c4ace22c7);
+            
+        
+
+        marker_8f091b07642bddba9e3cf010805403c0.bindPopup(popup_409d3df99918e690733116a731e566c3)
+        ;
+
+        
+    
+    
+                marker_8f091b07642bddba9e3cf010805403c0.setIcon(icon_0b2f853276d282f27385f3f0c18aa940);
+            
+</script>
+</html>

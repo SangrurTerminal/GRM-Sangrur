@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f19c3888801893c59e6ae41881c0bf2c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f19c3888801893c59e6ae41881c0bf2c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f19c3888801893c59e6ae41881c0bf2c = L.map(
+                "map_f19c3888801893c59e6ae41881c0bf2c",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 1,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_693cd7b4b99ec8d9e1c03c3d33571f3f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_693cd7b4b99ec8d9e1c03c3d33571f3f.addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            map_f19c3888801893c59e6ae41881c0bf2c.fitBounds(
+                [[30.21428, 75.86136], [30.21401, 75.86157], [30.2134, 75.86204], [30.20573, 75.86796], [30.20481, 75.86867], [30.2046, 75.86883], [30.20066, 75.87187], [30.19893, 75.87323], [30.19754, 75.87423], [30.19615, 75.87511], [30.19354, 75.87664], [30.19194, 75.87755], [30.1915, 75.87778], [30.19068, 75.87817], [30.18976, 75.87852], [30.18805, 75.87906], [30.18591, 75.87961], [30.1853, 75.87978], [30.18077, 75.88092], [30.17759, 75.88161], [30.17667, 75.8818], [30.17219, 75.88248], [30.17097, 75.88273], [30.16724, 75.88377], [30.1667, 75.88395], [30.16642, 75.88411], [30.16609, 75.8844], [30.16577, 75.88478], [30.16556, 75.88515], [30.16527, 75.88583], [30.16498, 75.88665], [30.16476, 75.88722], [30.16452, 75.88781], [30.1643, 75.88819], [30.1641, 75.88844], [30.16391, 75.88865], [30.16363, 75.88887], [30.1632, 75.88919], [30.16309, 75.88937], [30.16111, 75.89092], [30.15927, 75.89231], [30.15917, 75.89202], [30.15899, 75.89159], [30.15804, 75.88898], [30.15753, 75.88741], [30.15658, 75.88385], [30.15634, 75.88279], [30.15594, 75.88109], [30.15553, 75.87932], [30.15535, 75.8786], [30.15504, 75.87724], [30.15425, 75.87281], [30.15378, 75.87026], [30.15357, 75.869], [30.15351, 75.86866], [30.15339, 75.8681], [30.15311, 75.86723], [30.15284, 75.86648], [30.15236, 75.86508], [30.15204, 75.86405], [30.15001, 75.85826], [30.14883, 75.85454], [30.14803, 75.85196], [30.14734, 75.84979], [30.14555, 75.84393], [30.14495, 75.84198], [30.14455, 75.84062], [30.14434, 75.83993], [30.14413, 75.83925], [30.14391, 75.83854], [30.1438, 75.83808], [30.14345, 75.8369], [30.14283, 75.83465], [30.14239, 75.83314], [30.14193, 75.83149], [30.14168, 75.83076], [30.14165, 75.83065], [30.14161, 75.83054], [30.14106, 75.82868], [30.14045, 75.82653], [30.13836, 75.81944], [30.13766, 75.81722], [30.13759, 75.81699], [30.13727, 75.81592], [30.13675, 75.81432], [30.13674, 75.81432], [30.13671, 75.81429], [30.1367, 75.81424], [30.13671, 75.81421], [30.1363, 75.81291], [30.13633, 75.8129], [30.13638, 75.81287], [30.1364, 75.8128], [30.13638, 75.81274], [30.13636, 75.81271], [30.13679, 75.81126], [30.13847, 75.80572], [30.13854, 75.80545], [30.13864, 75.80494], [30.13874, 75.80381], [30.13889, 75.80138], [30.13892, 75.80102], [30.13891, 75.79956], [30.1389, 75.7994], [30.139, 75.79775], [30.13907, 75.79639], [30.13907, 75.79612], [30.13896, 75.79549], [30.1386, 75.7942], [30.1385, 75.79392], [30.13826, 75.7932], [30.138, 75.79237], [30.13782, 75.79187], [30.13725, 75.78993], [30.13723, 75.78977], [30.13673, 75.78824], [30.13648, 75.7869], [30.13645, 75.78677], [30.13631, 75.7858], [30.13609, 75.78443], [30.13581, 75.78248], [30.13558, 75.78103], [30.13536, 75.77947], [30.13527, 75.77899], [30.135, 75.7779], [30.13489, 75.77755], [30.13481, 75.77735], [30.1346, 75.77673], [30.13426, 75.77579], [30.13375, 75.77426], [30.13262, 75.771], [30.13218, 75.76981], [30.13172, 75.76844], [30.13043, 75.76478], [30.12924, 75.76138], [30.12712, 75.75538], [30.1268, 75.75442], [30.12553, 75.75083], [30.12503, 75.74943], [30.12451, 75.74791], [30.12403, 75.74652], [30.12257, 75.74241], [30.12219, 75.74127], [30.12157, 75.73962], [30.11945, 75.73356], [30.11783, 75.72901], [30.11709, 75.72705], [30.11637, 75.72487], [30.11573, 75.72306], [30.11532, 75.72182], [30.11467, 75.72003], [30.1145, 75.71932], [30.1145, 75.71872], [30.11458, 75.71834], [30.11521, 75.71641], [30.11525, 75.71612], [30.11522, 75.71577], [30.11514, 75.71557], [30.11497, 75.71525], [30.11486, 75.71512], [30.1147, 75.71501], [30.11402, 75.71447], [30.11329, 75.71384], [30.1131, 75.71361], [30.11288, 75.71342], [30.11257, 75.71312], [30.11231, 75.71283], [30.1121, 75.71254], [30.1118, 75.71203], [30.11165, 75.71167], [30.11094, 75.70961], [30.11033, 75.70795], [30.10961, 75.70585], [30.10796, 75.70124], [30.10728, 75.69934], [30.10651, 75.69711], [30.10598, 75.69567], [30.10509, 75.69308], [30.10426, 75.69081], [30.10227, 75.68504], [30.10211, 75.6846], [30.10162, 75.68319], [30.10123, 75.68201], [30.10099, 75.68135], [30.10074, 75.68058], [30.10064, 75.68028], [30.10057, 75.68005], [30.1004, 75.67941], [30.10016, 75.67815], [30.10009, 75.67763], [30.09987, 75.6766], [30.09949, 75.67431], [30.09943, 75.67397], [30.09905, 75.67181], [30.09881, 75.67062], [30.09867, 75.66974], [30.09859, 75.66934], [30.0984, 75.66825], [30.09824, 75.66732], [30.09817, 75.66699], [30.09772, 75.66462], [30.09758, 75.6638], [30.09755, 75.6635], [30.09731, 75.66232], [30.09673, 75.65909], [30.09671, 75.65893], [30.0965, 75.6578], [30.09625, 75.65648], [30.0961, 75.65573], [30.09581, 75.65472], [30.0955, 75.65331], [30.09512, 75.65188], [30.09493, 75.65118], [30.0942, 75.64794], [30.09384, 75.64652], [30.09365, 75.64566], [30.09204, 75.63912], [30.09178, 75.63796], [30.09095, 75.63455], [30.08862, 75.62482], [30.08747, 75.62018], [30.08598, 75.61403], [30.08569, 75.61286], [30.08546, 75.61192], [30.08469, 75.60878], [30.0844, 75.60759], [30.08284, 75.60135], [30.08265, 75.60052], [30.08231, 75.59921], [30.08194, 75.59761], [30.08168, 75.59668], [30.08075, 75.59289], [30.08062, 75.59245], [30.08001, 75.58985], [30.07979, 75.58905], [30.07912, 75.58617], [30.07864, 75.58441], [30.07852, 75.58384], [30.07792, 75.58151], [30.07741, 75.57942], [30.0765, 75.57592], [30.07592, 75.57356]],
+                {}
+            );
+        
+    
+            var poly_line_8e08778e571c27242d5a941e58e6b56b = L.polyline(
+                [[30.21428, 75.86136], [30.21401, 75.86157], [30.2134, 75.86204], [30.20573, 75.86796], [30.20481, 75.86867], [30.2046, 75.86883], [30.20066, 75.87187], [30.19893, 75.87323], [30.19754, 75.87423], [30.19615, 75.87511], [30.19354, 75.87664], [30.19194, 75.87755], [30.1915, 75.87778], [30.19068, 75.87817], [30.18976, 75.87852], [30.18805, 75.87906], [30.18591, 75.87961], [30.1853, 75.87978], [30.18077, 75.88092], [30.17759, 75.88161], [30.17667, 75.8818], [30.17219, 75.88248], [30.17097, 75.88273], [30.16724, 75.88377], [30.1667, 75.88395], [30.16642, 75.88411], [30.16609, 75.8844], [30.16577, 75.88478], [30.16556, 75.88515], [30.16527, 75.88583], [30.16498, 75.88665], [30.16476, 75.88722], [30.16452, 75.88781], [30.1643, 75.88819], [30.1641, 75.88844], [30.16391, 75.88865], [30.16363, 75.88887], [30.1632, 75.88919], [30.16309, 75.88937], [30.16111, 75.89092], [30.15927, 75.89231], [30.15917, 75.89202], [30.15899, 75.89159], [30.15804, 75.88898], [30.15753, 75.88741], [30.15658, 75.88385], [30.15634, 75.88279], [30.15594, 75.88109], [30.15553, 75.87932], [30.15535, 75.8786], [30.15504, 75.87724], [30.15425, 75.87281], [30.15378, 75.87026], [30.15357, 75.869], [30.15351, 75.86866], [30.15339, 75.8681], [30.15311, 75.86723], [30.15284, 75.86648], [30.15236, 75.86508], [30.15204, 75.86405], [30.15001, 75.85826], [30.14883, 75.85454], [30.14803, 75.85196], [30.14734, 75.84979], [30.14555, 75.84393], [30.14495, 75.84198], [30.14455, 75.84062], [30.14434, 75.83993], [30.14413, 75.83925], [30.14391, 75.83854], [30.1438, 75.83808], [30.14345, 75.8369], [30.14283, 75.83465], [30.14239, 75.83314], [30.14193, 75.83149], [30.14168, 75.83076], [30.14165, 75.83065], [30.14161, 75.83054], [30.14106, 75.82868], [30.14045, 75.82653], [30.13836, 75.81944], [30.13766, 75.81722], [30.13759, 75.81699], [30.13727, 75.81592], [30.13675, 75.81432], [30.13674, 75.81432], [30.13671, 75.81429], [30.1367, 75.81424], [30.13671, 75.81421], [30.1363, 75.81291], [30.13633, 75.8129], [30.13638, 75.81287], [30.1364, 75.8128], [30.13638, 75.81274], [30.13636, 75.81271], [30.13679, 75.81126], [30.13847, 75.80572], [30.13854, 75.80545], [30.13864, 75.80494], [30.13874, 75.80381], [30.13889, 75.80138], [30.13892, 75.80102], [30.13891, 75.79956], [30.1389, 75.7994], [30.139, 75.79775], [30.13907, 75.79639], [30.13907, 75.79612], [30.13896, 75.79549], [30.1386, 75.7942], [30.1385, 75.79392], [30.13826, 75.7932], [30.138, 75.79237], [30.13782, 75.79187], [30.13725, 75.78993], [30.13723, 75.78977], [30.13673, 75.78824], [30.13648, 75.7869], [30.13645, 75.78677], [30.13631, 75.7858], [30.13609, 75.78443], [30.13581, 75.78248], [30.13558, 75.78103], [30.13536, 75.77947], [30.13527, 75.77899], [30.135, 75.7779], [30.13489, 75.77755], [30.13481, 75.77735], [30.1346, 75.77673], [30.13426, 75.77579], [30.13375, 75.77426], [30.13262, 75.771], [30.13218, 75.76981], [30.13172, 75.76844], [30.13043, 75.76478], [30.12924, 75.76138], [30.12712, 75.75538], [30.1268, 75.75442], [30.12553, 75.75083], [30.12503, 75.74943], [30.12451, 75.74791], [30.12403, 75.74652], [30.12257, 75.74241], [30.12219, 75.74127], [30.12157, 75.73962], [30.11945, 75.73356], [30.11783, 75.72901], [30.11709, 75.72705], [30.11637, 75.72487], [30.11573, 75.72306], [30.11532, 75.72182], [30.11467, 75.72003], [30.1145, 75.71932], [30.1145, 75.71872], [30.11458, 75.71834], [30.11521, 75.71641], [30.11525, 75.71612], [30.11522, 75.71577], [30.11514, 75.71557], [30.11497, 75.71525], [30.11486, 75.71512], [30.1147, 75.71501], [30.11402, 75.71447], [30.11329, 75.71384], [30.1131, 75.71361], [30.11288, 75.71342], [30.11257, 75.71312], [30.11231, 75.71283], [30.1121, 75.71254], [30.1118, 75.71203], [30.11165, 75.71167], [30.11094, 75.70961], [30.11033, 75.70795], [30.10961, 75.70585], [30.10796, 75.70124], [30.10728, 75.69934], [30.10651, 75.69711], [30.10598, 75.69567], [30.10509, 75.69308], [30.10426, 75.69081], [30.10227, 75.68504], [30.10211, 75.6846], [30.10162, 75.68319], [30.10123, 75.68201], [30.10099, 75.68135], [30.10074, 75.68058], [30.10064, 75.68028], [30.10057, 75.68005], [30.1004, 75.67941], [30.10016, 75.67815], [30.10009, 75.67763], [30.09987, 75.6766], [30.09949, 75.67431], [30.09943, 75.67397], [30.09905, 75.67181], [30.09881, 75.67062], [30.09867, 75.66974], [30.09859, 75.66934], [30.0984, 75.66825], [30.09824, 75.66732], [30.09817, 75.66699], [30.09772, 75.66462], [30.09758, 75.6638], [30.09755, 75.6635], [30.09731, 75.66232], [30.09673, 75.65909], [30.09671, 75.65893], [30.0965, 75.6578], [30.09625, 75.65648], [30.0961, 75.65573], [30.09581, 75.65472], [30.0955, 75.65331], [30.09512, 75.65188], [30.09493, 75.65118], [30.0942, 75.64794], [30.09384, 75.64652], [30.09365, 75.64566], [30.09204, 75.63912], [30.09178, 75.63796], [30.09095, 75.63455], [30.08862, 75.62482], [30.08747, 75.62018], [30.08598, 75.61403], [30.08569, 75.61286], [30.08546, 75.61192], [30.08469, 75.60878], [30.0844, 75.60759], [30.08284, 75.60135], [30.08265, 75.60052], [30.08231, 75.59921], [30.08194, 75.59761], [30.08168, 75.59668], [30.08075, 75.59289], [30.08062, 75.59245], [30.08001, 75.58985], [30.07979, 75.58905], [30.07912, 75.58617], [30.07864, 75.58441], [30.07852, 75.58384], [30.07792, 75.58151], [30.07741, 75.57942], [30.0765, 75.57592], [30.07592, 75.57356]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var circle_marker_9dbcb736d5c3d197cecb89827606569a = L.circleMarker(
+                [30.15927, 75.89231],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+        var popup_c1d617c66237eaebc5c56d34adad35a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ba0966b16b697f11bf49e63cdbd341e = $(`<div id="html_6ba0966b16b697f11bf49e63cdbd341e" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 101.4, Risk: High</div>`)[0];
+                popup_c1d617c66237eaebc5c56d34adad35a2.setContent(html_6ba0966b16b697f11bf49e63cdbd341e);
+            
+        
+
+        circle_marker_9dbcb736d5c3d197cecb89827606569a.bindPopup(popup_c1d617c66237eaebc5c56d34adad35a2)
+        ;
+
+        
+    
+    
+            var circle_marker_bef43486d8f2231fddcc57cccfe44d62 = L.circleMarker(
+                [30.13675, 75.81432],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+        var popup_3a048609093eb500009272e9b8104dfa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bcdd5f99221aea2d97785900de5ae4e8 = $(`<div id="html_bcdd5f99221aea2d97785900de5ae4e8" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 69.4, Risk: Medium</div>`)[0];
+                popup_3a048609093eb500009272e9b8104dfa.setContent(html_bcdd5f99221aea2d97785900de5ae4e8);
+            
+        
+
+        circle_marker_bef43486d8f2231fddcc57cccfe44d62.bindPopup(popup_3a048609093eb500009272e9b8104dfa)
+        ;
+
+        
+    
+    
+            var circle_marker_36cd0fc0aced4d8c5b07d44794ce9a4d = L.circleMarker(
+                [30.1363, 75.81291],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+        var popup_48564dd0bbd226e15af2efcae81966ec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9242c1ba0c4cd52e8487cdc23a759a60 = $(`<div id="html_9242c1ba0c4cd52e8487cdc23a759a60" style="width: 100.0%; height: 100.0%;">Sharp Turn: Angle 94.0, Risk: Medium</div>`)[0];
+                popup_48564dd0bbd226e15af2efcae81966ec.setContent(html_9242c1ba0c4cd52e8487cdc23a759a60);
+            
+        
+
+        circle_marker_36cd0fc0aced4d8c5b07d44794ce9a4d.bindPopup(popup_48564dd0bbd226e15af2efcae81966ec)
+        ;
+
+        
+    
+    
+            var marker_d8bc3549b6fff6572ebc4c99a4bd409f = L.marker(
+                [30.16118, 75.89084],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_3bf83aff1ebd097ab36f3736a21786de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f5c822892bd39406ac3e1e0a53baa891 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_770e4d2ebe83cf44f0334964002906d3 = $(`<div id="html_770e4d2ebe83cf44f0334964002906d3" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 6987.2m, Risk: High</div>`)[0];
+                popup_f5c822892bd39406ac3e1e0a53baa891.setContent(html_770e4d2ebe83cf44f0334964002906d3);
+            
+        
+
+        marker_d8bc3549b6fff6572ebc4c99a4bd409f.bindPopup(popup_f5c822892bd39406ac3e1e0a53baa891)
+        ;
+
+        
+    
+    
+                marker_d8bc3549b6fff6572ebc4c99a4bd409f.setIcon(icon_3bf83aff1ebd097ab36f3736a21786de);
+            
+    
+            var marker_9aa1b1e6d4aa4550dca1fe18f87da178 = L.marker(
+                [30.137169999999998, 75.81565499999999],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_994c776b2371063170bbcc0706289c3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_54ddf08ffd23a0baca10c5c920e4237e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b9cd95fb950123db1e004f8f10d5009 = $(`<div id="html_3b9cd95fb950123db1e004f8f10d5009" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 14916.1m, Risk: High</div>`)[0];
+                popup_54ddf08ffd23a0baca10c5c920e4237e.setContent(html_3b9cd95fb950123db1e004f8f10d5009);
+            
+        
+
+        marker_9aa1b1e6d4aa4550dca1fe18f87da178.bindPopup(popup_54ddf08ffd23a0baca10c5c920e4237e)
+        ;
+
+        
+    
+    
+                marker_9aa1b1e6d4aa4550dca1fe18f87da178.setIcon(icon_994c776b2371063170bbcc0706289c3a);
+            
+    
+            var marker_f05ef3a0ed2e746e4747abc324b4281f = L.marker(
+                [30.137005000000002, 75.81512000000001],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_e9e28766ee7ec33c05eb7d669dce2617 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0049d0ea61f69105b2177f3bd623a04a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a2c06dc567110c4fb6b0b27920f8b2e = $(`<div id="html_6a2c06dc567110c4fb6b0b27920f8b2e" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 14917.2m, Risk: High</div>`)[0];
+                popup_0049d0ea61f69105b2177f3bd623a04a.setContent(html_6a2c06dc567110c4fb6b0b27920f8b2e);
+            
+        
+
+        marker_f05ef3a0ed2e746e4747abc324b4281f.bindPopup(popup_0049d0ea61f69105b2177f3bd623a04a)
+        ;
+
+        
+    
+    
+                marker_f05ef3a0ed2e746e4747abc324b4281f.setIcon(icon_e9e28766ee7ec33c05eb7d669dce2617);
+            
+    
+            var marker_96a78b3813a3295b874e8c2c70016934 = L.marker(
+                [30.13673, 75.81430499999999],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_5baba24e8a4191f3e620b3dd873d8368 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a03df7accd493bdcab297aeb5be4d777 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d58ad4f137f8ad2f823ded18a1894bfd = $(`<div id="html_d58ad4f137f8ad2f823ded18a1894bfd" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 14921.6m, Risk: High</div>`)[0];
+                popup_a03df7accd493bdcab297aeb5be4d777.setContent(html_d58ad4f137f8ad2f823ded18a1894bfd);
+            
+        
+
+        marker_96a78b3813a3295b874e8c2c70016934.bindPopup(popup_a03df7accd493bdcab297aeb5be4d777)
+        ;
+
+        
+    
+    
+                marker_96a78b3813a3295b874e8c2c70016934.setIcon(icon_5baba24e8a4191f3e620b3dd873d8368);
+            
+    
+            var marker_ae6a99a98b5aab8ba4ccaadffb98ab52 = L.marker(
+                [30.13672, 75.81428],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_b1556677f6fcb2f0aa267eaef82318c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_487580d45135f5b6e99423572879dd87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc71999b660bc54beff53ae1a1d88db2 = $(`<div id="html_cc71999b660bc54beff53ae1a1d88db2" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 14926.6m, Risk: High</div>`)[0];
+                popup_487580d45135f5b6e99423572879dd87.setContent(html_cc71999b660bc54beff53ae1a1d88db2);
+            
+        
+
+        marker_ae6a99a98b5aab8ba4ccaadffb98ab52.bindPopup(popup_487580d45135f5b6e99423572879dd87)
+        ;
+
+        
+    
+    
+                marker_ae6a99a98b5aab8ba4ccaadffb98ab52.setIcon(icon_b1556677f6fcb2f0aa267eaef82318c1);
+            
+    
+            var marker_6d9a16234162cce5ea3e96a624431b03 = L.marker(
+                [30.13671, 75.81425],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_c2e0f8c708ef8f289dd09d330856fef9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_40c1375c2dfb5601f5c9edaf912b5b76 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_577d9c6fafce11a8cd14f60a56783603 = $(`<div id="html_577d9c6fafce11a8cd14f60a56783603" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 14929.7m, Risk: High</div>`)[0];
+                popup_40c1375c2dfb5601f5c9edaf912b5b76.setContent(html_577d9c6fafce11a8cd14f60a56783603);
+            
+        
+
+        marker_6d9a16234162cce5ea3e96a624431b03.bindPopup(popup_40c1375c2dfb5601f5c9edaf912b5b76)
+        ;
+
+        
+    
+    
+                marker_6d9a16234162cce5ea3e96a624431b03.setIcon(icon_c2e0f8c708ef8f289dd09d330856fef9);
+            
+    
+            var marker_64e704c0774aed6836802936b5d74773 = L.marker(
+                [30.136499999999998, 75.813575],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_c639b7572c574453553e3d5281567a33 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba75305a3119b83fd158afd4ac05ac40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2881b38671ddc02ae82962ea2c9d58af = $(`<div id="html_2881b38671ddc02ae82962ea2c9d58af" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 15062.9m, Risk: High</div>`)[0];
+                popup_ba75305a3119b83fd158afd4ac05ac40.setContent(html_2881b38671ddc02ae82962ea2c9d58af);
+            
+        
+
+        marker_64e704c0774aed6836802936b5d74773.bindPopup(popup_ba75305a3119b83fd158afd4ac05ac40)
+        ;
+
+        
+    
+    
+                marker_64e704c0774aed6836802936b5d74773.setIcon(icon_c639b7572c574453553e3d5281567a33);
+            
+    
+            var marker_fc42cea2e1dcfdd9fa8811bfb787a98c = L.marker(
+                [30.13652, 75.81355500000001],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_e0b075b01fac2703deb3866dd53bfbf0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ff817b5d849085701fd4642b7a5ea72c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b92e95d379afb9f1817168de27dc6bb5 = $(`<div id="html_b92e95d379afb9f1817168de27dc6bb5" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 15066.4m, Risk: High</div>`)[0];
+                popup_ff817b5d849085701fd4642b7a5ea72c.setContent(html_b92e95d379afb9f1817168de27dc6bb5);
+            
+        
+
+        marker_fc42cea2e1dcfdd9fa8811bfb787a98c.bindPopup(popup_ff817b5d849085701fd4642b7a5ea72c)
+        ;
+
+        
+    
+    
+                marker_fc42cea2e1dcfdd9fa8811bfb787a98c.setIcon(icon_e0b075b01fac2703deb3866dd53bfbf0);
+            
+    
+            var marker_e4ddab4bad6aa5078a94632f941189df = L.marker(
+                [30.136339999999997, 75.81289000000001],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_068b229a92a5e7f9d6a1b2f5c524f07a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_198da2e18c5d7a52861ecf81f4e54936 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d74d3a0bdb210266be3102f15bd7020e = $(`<div id="html_d74d3a0bdb210266be3102f15bd7020e" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 15072.6m, Risk: High</div>`)[0];
+                popup_198da2e18c5d7a52861ecf81f4e54936.setContent(html_d74d3a0bdb210266be3102f15bd7020e);
+            
+        
+
+        marker_e4ddab4bad6aa5078a94632f941189df.bindPopup(popup_198da2e18c5d7a52861ecf81f4e54936)
+        ;
+
+        
+    
+    
+                marker_e4ddab4bad6aa5078a94632f941189df.setIcon(icon_068b229a92a5e7f9d6a1b2f5c524f07a);
+            
+    
+            var marker_bd66ef76d928660e9f3fee8a605a0de3 = L.marker(
+                [30.136364999999998, 75.81285],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_0cc8b4461dbd2d3d23729a0871495cb3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba7efbaec39b004d72457ac13be1a875 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_628fda6cc580df5226db65abdebef734 = $(`<div id="html_628fda6cc580df5226db65abdebef734" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 15079.7m, Risk: High</div>`)[0];
+                popup_ba7efbaec39b004d72457ac13be1a875.setContent(html_628fda6cc580df5226db65abdebef734);
+            
+        
+
+        marker_bd66ef76d928660e9f3fee8a605a0de3.bindPopup(popup_ba7efbaec39b004d72457ac13be1a875)
+        ;
+
+        
+    
+    
+                marker_bd66ef76d928660e9f3fee8a605a0de3.setIcon(icon_0cc8b4461dbd2d3d23729a0871495cb3);
+            
+    
+            var marker_251613acfa1392661ebb8309ed3f66d1 = L.marker(
+                [30.13638, 75.812805],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_a442bd1cc0ec14edeee77cef1067ae74 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8fe5753b345600a136d13e7d77673947 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9484365e8a2065eabd4174f4bc458fa4 = $(`<div id="html_9484365e8a2065eabd4174f4bc458fa4" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 15085.9m, Risk: High</div>`)[0];
+                popup_8fe5753b345600a136d13e7d77673947.setContent(html_9484365e8a2065eabd4174f4bc458fa4);
+            
+        
+
+        marker_251613acfa1392661ebb8309ed3f66d1.bindPopup(popup_8fe5753b345600a136d13e7d77673947)
+        ;
+
+        
+    
+    
+                marker_251613acfa1392661ebb8309ed3f66d1.setIcon(icon_a442bd1cc0ec14edeee77cef1067ae74);
+            
+    
+            var marker_7baedf9843780a4eab321d19d27a859b = L.marker(
+                [30.13638, 75.812755],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_989505ec4145fd9abff4ddf1bb9446d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "eye-slash",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4aa597e64eb24943f73e7da15d7c9b4c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_acef4cbcad8276cf29b8e77dfaf0aaf9 = $(`<div id="html_acef4cbcad8276cf29b8e77dfaf0aaf9" style="width: 100.0%; height: 100.0%;">Blind Segment: Length 15089.6m, Risk: High</div>`)[0];
+                popup_4aa597e64eb24943f73e7da15d7c9b4c.setContent(html_acef4cbcad8276cf29b8e77dfaf0aaf9);
+            
+        
+
+        marker_7baedf9843780a4eab321d19d27a859b.bindPopup(popup_4aa597e64eb24943f73e7da15d7c9b4c)
+        ;
+
+        
+    
+    
+                marker_7baedf9843780a4eab321d19d27a859b.setIcon(icon_989505ec4145fd9abff4ddf1bb9446d4);
+            
+    
+            var marker_86dbe585b057cfbc451c9f8c729a9eee = L.marker(
+                [30.15758359999999, 75.8960589],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_86acda001fff57eb492a16f031fab166 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_46ff7c07eac2c8e9ae2d461a9bf58be7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_688999934912f3efa195cf53fc8addbf = $(`<div id="html_688999934912f3efa195cf53fc8addbf" style="width: 100.0%; height: 100.0%;">Hospital: Govenment Veternary Hospital - 5V5W+2CM, Mahlan</div>`)[0];
+                popup_46ff7c07eac2c8e9ae2d461a9bf58be7.setContent(html_688999934912f3efa195cf53fc8addbf);
+            
+        
+
+        marker_86dbe585b057cfbc451c9f8c729a9eee.bindPopup(popup_46ff7c07eac2c8e9ae2d461a9bf58be7)
+        ;
+
+        
+    
+    
+                marker_86dbe585b057cfbc451c9f8c729a9eee.setIcon(icon_86acda001fff57eb492a16f031fab166);
+            
+    
+            var marker_4f3ed593c0be707388e6b8d088c298ca = L.marker(
+                [30.1381001, 75.81748189999999],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_0b57ea06c740f987e9c9647e7720ccc7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3064e18d5e9abdf545565a51d0a38c54 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da0de3f836067987910298f3422bbe64 = $(`<div id="html_da0de3f836067987910298f3422bbe64" style="width: 100.0%; height: 100.0%;">Hospital: Kashmiri Hospital - near Civil Court, Sunam Udham Singh Wala</div>`)[0];
+                popup_3064e18d5e9abdf545565a51d0a38c54.setContent(html_da0de3f836067987910298f3422bbe64);
+            
+        
+
+        marker_4f3ed593c0be707388e6b8d088c298ca.bindPopup(popup_3064e18d5e9abdf545565a51d0a38c54)
+        ;
+
+        
+    
+    
+                marker_4f3ed593c0be707388e6b8d088c298ca.setIcon(icon_0b57ea06c740f987e9c9647e7720ccc7);
+            
+    
+            var marker_a2f7b364986e1482ca1bc7f16543a36b = L.marker(
+                [30.0987391, 75.68219909999999],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_d5522e567e9678fac5ea031fbac13b0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d79b0a2de1e5ef2c2dca569b25fb3e43 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f65a9549a032eee3f2d63d1a962a60a7 = $(`<div id="html_f65a9549a032eee3f2d63d1a962a60a7" style="width: 100.0%; height: 100.0%;">Hospital: Pharwahi Digital X-Ray And Physiotherapy Centre - 3MXJ+FVW, Cheema</div>`)[0];
+                popup_d79b0a2de1e5ef2c2dca569b25fb3e43.setContent(html_f65a9549a032eee3f2d63d1a962a60a7);
+            
+        
+
+        marker_a2f7b364986e1482ca1bc7f16543a36b.bindPopup(popup_d79b0a2de1e5ef2c2dca569b25fb3e43)
+        ;
+
+        
+    
+    
+                marker_a2f7b364986e1482ca1bc7f16543a36b.setIcon(icon_d5522e567e9678fac5ea031fbac13b0f);
+            
+    
+            var marker_4112780fe9792aedccc11da0988cbfb7 = L.marker(
+                [30.0996626, 75.6810845],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_65790fd0736b5cacefc1bc59dbbf37d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb232c1cc86edcb12b9192695c9bf865 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b22095ba07ca1c6dec7b27df5b7d8c5 = $(`<div id="html_9b22095ba07ca1c6dec7b27df5b7d8c5" style="width: 100.0%; height: 100.0%;">Hospital: Pawar dental lab - Main bazar, Cheema Mandi Phirni</div>`)[0];
+                popup_eb232c1cc86edcb12b9192695c9bf865.setContent(html_9b22095ba07ca1c6dec7b27df5b7d8c5);
+            
+        
+
+        marker_4112780fe9792aedccc11da0988cbfb7.bindPopup(popup_eb232c1cc86edcb12b9192695c9bf865)
+        ;
+
+        
+    
+    
+                marker_4112780fe9792aedccc11da0988cbfb7.setIcon(icon_65790fd0736b5cacefc1bc59dbbf37d1);
+            
+    
+            var marker_f9cbf929961d7a98696cd39392aab941 = L.marker(
+                [30.0988564, 75.68177519999999],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_f5358bd1c86834ba979c65a577bd50c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_757bbf9de57a858199b187c80d161c07 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_512b407256c4f99d42e4190a2fc1fb97 = $(`<div id="html_512b407256c4f99d42e4190a2fc1fb97" style="width: 100.0%; height: 100.0%;">Hospital: Dhalewan Hospital - Peru Market, Cheema</div>`)[0];
+                popup_757bbf9de57a858199b187c80d161c07.setContent(html_512b407256c4f99d42e4190a2fc1fb97);
+            
+        
+
+        marker_f9cbf929961d7a98696cd39392aab941.bindPopup(popup_757bbf9de57a858199b187c80d161c07)
+        ;
+
+        
+    
+    
+                marker_f9cbf929961d7a98696cd39392aab941.setIcon(icon_f5358bd1c86834ba979c65a577bd50c9);
+            
+    
+            var marker_1f762020360047e8646ea4fa5ddb3983 = L.marker(
+                [30.0985462, 75.6822572],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_2c68b1a56315cfca6952f34c592b80b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_632e27c90851fa0c598fcd42c18942ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf808c19d621d1cc77aabea34abe5c59 = $(`<div id="html_cf808c19d621d1cc77aabea34abe5c59" style="width: 100.0%; height: 100.0%;">Hospital: Aam adami clinic - 3MXJ+5W2, Cheema Mandi Phirni, Cheema</div>`)[0];
+                popup_632e27c90851fa0c598fcd42c18942ca.setContent(html_cf808c19d621d1cc77aabea34abe5c59);
+            
+        
+
+        marker_1f762020360047e8646ea4fa5ddb3983.bindPopup(popup_632e27c90851fa0c598fcd42c18942ca)
+        ;
+
+        
+    
+    
+                marker_1f762020360047e8646ea4fa5ddb3983.setIcon(icon_2c68b1a56315cfca6952f34c592b80b2);
+            
+    
+            var marker_b1a3d3d9733ba7c44987fae8253d813c = L.marker(
+                [30.100309, 75.6804179],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_884af4c6b50b3a1d3645d4e15424060a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_848dc58ee3e3d3e20bbfbd14d218e1b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b3255627428a5da063a39de50a7d8105 = $(`<div id="html_b3255627428a5da063a39de50a7d8105" style="width: 100.0%; height: 100.0%;">Hospital: Janta Hospital - 4M2J+45F, Cheema Mandi Link Road, Cheema</div>`)[0];
+                popup_848dc58ee3e3d3e20bbfbd14d218e1b2.setContent(html_b3255627428a5da063a39de50a7d8105);
+            
+        
+
+        marker_b1a3d3d9733ba7c44987fae8253d813c.bindPopup(popup_848dc58ee3e3d3e20bbfbd14d218e1b2)
+        ;
+
+        
+    
+    
+                marker_b1a3d3d9733ba7c44987fae8253d813c.setIcon(icon_884af4c6b50b3a1d3645d4e15424060a);
+            
+    
+            var marker_86418ca5fc7a906c96f0a98510db4bed = L.marker(
+                [30.08556879999999, 75.6127924],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_9c367eab1d8784facbda0271b1c9681d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_051b679a819f4d190f7b90b7aaeb6ebc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eaf1807981c41a15b60bc0ff62624f0c = $(`<div id="html_eaf1807981c41a15b60bc0ff62624f0c" style="width: 100.0%; height: 100.0%;">Hospital: Sach Medical Hall - 3JP7+64F, Dhaipai</div>`)[0];
+                popup_051b679a819f4d190f7b90b7aaeb6ebc.setContent(html_eaf1807981c41a15b60bc0ff62624f0c);
+            
+        
+
+        marker_86418ca5fc7a906c96f0a98510db4bed.bindPopup(popup_051b679a819f4d190f7b90b7aaeb6ebc)
+        ;
+
+        
+    
+    
+                marker_86418ca5fc7a906c96f0a98510db4bed.setIcon(icon_9c367eab1d8784facbda0271b1c9681d);
+            
+    
+            var marker_79be208d723b638fbc309f7841c6efc7 = L.marker(
+                [30.0873858, 75.61062609999999],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_93a09f4f50eaa914801766043dd8fc1b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6204ead52bc3f917f9701d0b946ab0ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_97c9bd862b2a8980f1bd2a8e9d5ed0d6 = $(`<div id="html_97c9bd862b2a8980f1bd2a8e9d5ed0d6" style="width: 100.0%; height: 100.0%;">Hospital: primary health centre - 3JP6+X72, Dhaipai</div>`)[0];
+                popup_6204ead52bc3f917f9701d0b946ab0ca.setContent(html_97c9bd862b2a8980f1bd2a8e9d5ed0d6);
+            
+        
+
+        marker_79be208d723b638fbc309f7841c6efc7.bindPopup(popup_6204ead52bc3f917f9701d0b946ab0ca)
+        ;
+
+        
+    
+    
+                marker_79be208d723b638fbc309f7841c6efc7.setIcon(icon_93a09f4f50eaa914801766043dd8fc1b);
+            
+    
+            var marker_9e026430158bce340b30dd37341d370a = L.marker(
+                [30.158691, 75.891262],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_7104f76353cac7e5f964b163a87612e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a87075f98ab475d3234d01f0305164d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f65f2410d7794fe9a697bce7b03ae37b = $(`<div id="html_f65f2410d7794fe9a697bce7b03ae37b" style="width: 100.0%; height: 100.0%;">Gas_Station: IndianOil - Ground Floor B Garh Sunam Rd, Mehlan, Chawk, Badrukhan</div>`)[0];
+                popup_9a87075f98ab475d3234d01f0305164d.setContent(html_f65f2410d7794fe9a697bce7b03ae37b);
+            
+        
+
+        marker_9e026430158bce340b30dd37341d370a.bindPopup(popup_9a87075f98ab475d3234d01f0305164d)
+        ;
+
+        
+    
+    
+                marker_9e026430158bce340b30dd37341d370a.setIcon(icon_7104f76353cac7e5f964b163a87612e9);
+            
+    
+            var marker_ae0315db87dadd8a911b09838024144a = L.marker(
+                [30.1369955, 75.8160898],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_137d8283efd1119c34d6354e9637825a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_81c4d1d67faabb044fa51014e9d85157 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dc1febb6e0e7f2e46a539fb79afb1c78 = $(`<div id="html_dc1febb6e0e7f2e46a539fb79afb1c78" style="width: 100.0%; height: 100.0%;">Gas_Station: Bharat Petroleum, Petrol Pump -Kaka Ram Ranuq Ram - SUNAM NEAR LIGHT CHOWK, Sangrur</div>`)[0];
+                popup_81c4d1d67faabb044fa51014e9d85157.setContent(html_dc1febb6e0e7f2e46a539fb79afb1c78);
+            
+        
+
+        marker_ae0315db87dadd8a911b09838024144a.bindPopup(popup_81c4d1d67faabb044fa51014e9d85157)
+        ;
+
+        
+    
+    
+                marker_ae0315db87dadd8a911b09838024144a.setIcon(icon_137d8283efd1119c34d6354e9637825a);
+            
+    
+            var marker_c133764095d11a0a6ed89c7876d2acbb = L.marker(
+                [30.1013014, 75.6832323],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_4501444d235aecd8dcdb7afb0a7e3789 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b8276e5ad0e4287d0a377c7ceb1a4ae2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_16b61bcd54d323998b3f24495b31105c = $(`<div id="html_16b61bcd54d323998b3f24495b31105c" style="width: 100.0%; height: 100.0%;">Gas_Station: IndianOil - Ground Floor Sunam Mansa, Road SH 12A, Cheema</div>`)[0];
+                popup_b8276e5ad0e4287d0a377c7ceb1a4ae2.setContent(html_16b61bcd54d323998b3f24495b31105c);
+            
+        
+
+        marker_c133764095d11a0a6ed89c7876d2acbb.bindPopup(popup_b8276e5ad0e4287d0a377c7ceb1a4ae2)
+        ;
+
+        
+    
+    
+                marker_c133764095d11a0a6ed89c7876d2acbb.setIcon(icon_4501444d235aecd8dcdb7afb0a7e3789);
+            
+    
+            var marker_902c5fe96b1fb34ea85a72b8a7920282 = L.marker(
+                [30.075504, 75.573692],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_b1a2779d79362ce5a35260d65bcd84e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tint",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_430ab6791130dd91e6073a8ef87b992b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c22300339e9dcff0c6036c0aca3a7b23 = $(`<div id="html_c22300339e9dcff0c6036c0aca3a7b23" style="width: 100.0%; height: 100.0%;">Gas_Station: IndianOil - Ground Floor, Bhikhi, Sunam Road, Atla Kalan</div>`)[0];
+                popup_430ab6791130dd91e6073a8ef87b992b.setContent(html_c22300339e9dcff0c6036c0aca3a7b23);
+            
+        
+
+        marker_902c5fe96b1fb34ea85a72b8a7920282.bindPopup(popup_430ab6791130dd91e6073a8ef87b992b)
+        ;
+
+        
+    
+    
+                marker_902c5fe96b1fb34ea85a72b8a7920282.setIcon(icon_b1a2779d79362ce5a35260d65bcd84e6);
+            
+    
+            var marker_a8dc9f3faebe284f8bc0a1a83f9436ab = L.marker(
+                [30.1583277, 75.8933303],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_3d5f5d03aca7e1e1367e6f38bb3b4a26 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_151c5f41066a130f48176c55de205bff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d77fc07646cdad994dcfb2dea5e5cb7e = $(`<div id="html_d77fc07646cdad994dcfb2dea5e5cb7e" style="width: 100.0%; height: 100.0%;">Police: Police Station, Mehlan - 5V5V+88P, Mahlan</div>`)[0];
+                popup_151c5f41066a130f48176c55de205bff.setContent(html_d77fc07646cdad994dcfb2dea5e5cb7e);
+            
+        
+
+        marker_a8dc9f3faebe284f8bc0a1a83f9436ab.bindPopup(popup_151c5f41066a130f48176c55de205bff)
+        ;
+
+        
+    
+    
+                marker_a8dc9f3faebe284f8bc0a1a83f9436ab.setIcon(icon_3d5f5d03aca7e1e1367e6f38bb3b4a26);
+            
+    
+            var marker_264d8d89c5df824d4a8613113b4a4257 = L.marker(
+                [30.1008478, 75.68161510000002],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_cc5ac06035f3b9e5baa103a720d654e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "car",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4e858bc640d506052a51ddf372cace5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7eabbd1b39d12aaa4e73fe6aede0a955 = $(`<div id="html_7eabbd1b39d12aaa4e73fe6aede0a955" style="width: 100.0%; height: 100.0%;">Parking: Kewal Singh - Ship No 82 Vpo, Rd, Cheema</div>`)[0];
+                popup_f4e858bc640d506052a51ddf372cace5.setContent(html_7eabbd1b39d12aaa4e73fe6aede0a955);
+            
+        
+
+        marker_264d8d89c5df824d4a8613113b4a4257.bindPopup(popup_f4e858bc640d506052a51ddf372cace5)
+        ;
+
+        
+    
+    
+                marker_264d8d89c5df824d4a8613113b4a4257.setIcon(icon_cc5ac06035f3b9e5baa103a720d654e4);
+            
+    
+            var marker_3002df258ecdb91138df11adf53ad5ab = L.marker(
+                [30.10071079999999, 75.6812623],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_fd01fa54fb58832da45a2b88a37a0144 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "car",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4093661279bc79054498353cc83495f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4daea0fb807bd4c015d6d30c6f40e64a = $(`<div id="html_4daea0fb807bd4c015d6d30c6f40e64a" style="width: 100.0%; height: 100.0%;">Parking: Handa Tyre Service - 542,Main Market, Road, Sunam Udham Singh Wala</div>`)[0];
+                popup_4093661279bc79054498353cc83495f5.setContent(html_4daea0fb807bd4c015d6d30c6f40e64a);
+            
+        
+
+        marker_3002df258ecdb91138df11adf53ad5ab.bindPopup(popup_4093661279bc79054498353cc83495f5)
+        ;
+
+        
+    
+    
+                marker_3002df258ecdb91138df11adf53ad5ab.setIcon(icon_fd01fa54fb58832da45a2b88a37a0144);
+            
+    
+            var marker_8e104734e741e4a609d5eed6e83a1141 = L.marker(
+                [30.1371132, 75.81631949999999],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_eefbd7021d7de352e63d9589bd7b37e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_230236e8f63c937fff468af39e10d391 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a7179a53dfda65c1db24723420d62c3f = $(`<div id="html_a7179a53dfda65c1db24723420d62c3f" style="width: 100.0%; height: 100.0%;">Puncture_Shop: Yokohama Club Network - Mittal Tyre House - ITI Chowk, Sardar Nagar, Dashmesh Nagar, Sangrur, Sunam Udham Singh Wala</div>`)[0];
+                popup_230236e8f63c937fff468af39e10d391.setContent(html_a7179a53dfda65c1db24723420d62c3f);
+            
+        
+
+        marker_8e104734e741e4a609d5eed6e83a1141.bindPopup(popup_230236e8f63c937fff468af39e10d391)
+        ;
+
+        
+    
+    
+                marker_8e104734e741e4a609d5eed6e83a1141.setIcon(icon_eefbd7021d7de352e63d9589bd7b37e1);
+            
+    
+            var marker_774adfdbf77641701a9c0db48ab6ba72 = L.marker(
+                [30.1363947, 75.81379419999999],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_bf5f031105c548420a585f36b932fbb1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04b31f41546e9f2236c9e2692e872384 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad87c24f9f0fb7e0ad00024d23fd9e2d = $(`<div id="html_ad87c24f9f0fb7e0ad00024d23fd9e2d" style="width: 100.0%; height: 100.0%;">Puncture_Shop: BALAJI TYRES - 4RP7+HGF, SH12A, Ajit Nagar, Shapur Kalan, Sunam Udham Singh Wala</div>`)[0];
+                popup_04b31f41546e9f2236c9e2692e872384.setContent(html_ad87c24f9f0fb7e0ad00024d23fd9e2d);
+            
+        
+
+        marker_774adfdbf77641701a9c0db48ab6ba72.bindPopup(popup_04b31f41546e9f2236c9e2692e872384)
+        ;
+
+        
+    
+    
+                marker_774adfdbf77641701a9c0db48ab6ba72.setIcon(icon_bf5f031105c548420a585f36b932fbb1);
+            
+    
+            var marker_f2823bf1dcbc9487d16709558c30fe9e = L.marker(
+                [30.1390575, 75.8209086],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_0ec35e1ac0a621a7c6b23d64d57f404e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_adfa167f0f5618db36d5238838da7981 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_48436462e5e3d41098a0b1370bdd9150 = $(`<div id="html_48436462e5e3d41098a0b1370bdd9150" style="width: 100.0%; height: 100.0%;">Puncture_Shop: Azad Tyres & Car wash - SH12A, Dashmesh Nagar, Sunam Udham Singh Wala</div>`)[0];
+                popup_adfa167f0f5618db36d5238838da7981.setContent(html_48436462e5e3d41098a0b1370bdd9150);
+            
+        
+
+        marker_f2823bf1dcbc9487d16709558c30fe9e.bindPopup(popup_adfa167f0f5618db36d5238838da7981)
+        ;
+
+        
+    
+    
+                marker_f2823bf1dcbc9487d16709558c30fe9e.setIcon(icon_0ec35e1ac0a621a7c6b23d64d57f404e);
+            
+    
+            var marker_ac50a835792071811e847fac158636e0 = L.marker(
+                [30.1007088, 75.68125719999999],
+                {
+}
+            ).addTo(map_f19c3888801893c59e6ae41881c0bf2c);
+        
+    
+            var icon_33df140033faf02261f068741434153f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb1d1ab01307cdfe2732f63c3ea15c6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_affde37eeb606d2a74daaa882b1879db = $(`<div id="html_affde37eeb606d2a74daaa882b1879db" style="width: 100.0%; height: 100.0%;">Puncture_Shop: Handa Tyre Service - 542,Main Market, Road, Sunam Udham Singh Wala, Cheema</div>`)[0];
+                popup_fb1d1ab01307cdfe2732f63c3ea15c6b.setContent(html_affde37eeb606d2a74daaa882b1879db);
+            
+        
+
+        marker_ac50a835792071811e847fac158636e0.bindPopup(popup_fb1d1ab01307cdfe2732f63c3ea15c6b)
+        ;
+
+        
+    
+    
+                marker_ac50a835792071811e847fac158636e0.setIcon(icon_33df140033faf02261f068741434153f);
+            
+</script>
+</html>
